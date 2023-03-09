@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+.wrapper {
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+.main > .gallery + div {
+    min-height: calc(var(--vh, 1vh) * 100);
+}
+
+
+
