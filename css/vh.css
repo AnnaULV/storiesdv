@@ -4,7 +4,7 @@
   height: calc(var(--vh, 1vh) * 100);
 }
 
-.main > .gallery + div {
+.main {
     min-height: calc(var(--vh, 1vh) * 100);
 }
 

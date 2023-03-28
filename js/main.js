@@ -13,8 +13,12 @@ $(document).ready(function () {
             crossFade: true
         },
         pagination: {
-            el: ".main > .gallery + div > div:last-child > div > .swiper-pagination",
+            el: ".main > .swiper-pagination",
             clickable: true
+        },
+         navigation: {
+            nextEl: ".main > .gallery.swiper-container > .swiper-button.next",
+            prevEl: ".main > .gallery.swiper-container > .swiper-button.prev"
         }
     });
     return false;
