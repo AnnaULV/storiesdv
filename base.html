@@ -113,7 +113,7 @@
             return false;
         }
 
-        let jsonJS = JSON.parse('[{"source":"js/main.js"}]');
+        let jsonJS = JSON.parse('[{"source":"js/jquery.template.js"},{"source":"js/main.js"}]');
         jsonJS.forEach(function(e, i) {
             setTimeout(function() {
                 loadJS(jsonJS[i].source + "?" + $.now());
