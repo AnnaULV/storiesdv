@@ -20,6 +20,10 @@ body {
     position: relative;
 }
 
+.workspace {
+    overflow-y: scroll;
+}
+
 header {
     position: sticky;
     left: 0;
