@@ -112,47 +112,37 @@
 }
 
 @media (min-width : 1441px) {
-    .swiper-container > .swiper-button.prev,
-    .swiper-container > .swiper-button.next {
+  .swiper-container > .swiper-button {
         display: block;
     }
 }
 
 @media (min-width : 1201px) and (max-width : 1440px) {
-    .swiper-container > .swiper-button.prev,
-    .swiper-container > .swiper-button.next {
+  .swiper-container > .swiper-button {
         display: block;
     }
 }
 
 @media (min-width : 961px) and (max-width : 1200px) {
-
-    .swiper-container > .swiper-button.prev,
-    .swiper-container > .swiper-button.next {
+ .swiper-container > .swiper-button {
         display: none;
     }
 }
 
 @media (min-width : 721px) and (max-width : 960px) {
-
-    .swiper-container > .swiper-button.prev,
-    .swiper-container > .swiper-button.next {
+ .swiper-container > .swiper-button {
         display: none;
     }
 }
 
 @media (min-width : 481px) and (max-width : 720px) {
-
-    .swiper-container > .swiper-button.prev,
-    .swiper-container > .swiper-button.next {
+  .swiper-container > .swiper-button {
         display: none;
     }
 }
 
 @media (max-width : 480px) {
-
-    .swiper-container > .swiper-button.prev,
-    .swiper-container > .swiper-button.next {
+    .swiper-container > .swiper-button {
         display: none;
     }
 }
