@@ -80,14 +80,14 @@ article {
 
 .content {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     height: 100%;
+    text-shadow: 1px 1px 2px rgb(145, 145, 145, 1);
 }
 
 .content > div {
     padding-top: 10rem;
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-bottom: 10rem;
 }
 
 .content > div > h1 {
@@ -113,41 +113,65 @@ article {
 
 .content > div > span {
     font-size: clamp(2.5rem, 3.75vw, 5rem);
-    font-weight: 300;
+    font-weight: 500;
     display: block;
 }
 
 @media (min-width : 1441px) {
+    .content > div {
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
     .content > div > span {
         width: 80%;
     }
 }
 
 @media (min-width : 1201px) and (max-width : 1440px) {
+    .content > div {
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
     .content > div > span {
         width: 80%;
     }
 }
 
 @media (min-width : 961px) and (max-width : 1200px) {
+    .content > div {
+    padding-left: 0;
+    padding-right: 0;
+}
     .content > div > span {
         width: 100%;
     }
 }
 
 @media (min-width : 721px) and (max-width : 960px) {
+    .content > div {
+    padding-left: 0;
+    padding-right: 0;
+}
     .content > div > span {
         width: 100%;
     }
 }
 
 @media (min-width : 481px) and (max-width : 720px) {
+    .content > div {
+    padding-left: 0;
+    padding-right: 0;
+}
     .content > div > span {
         width: 100%;
     }
 }
 
 @media (max-width : 480px) {
+    .content > div {
+    padding-left: 0;
+    padding-right: 0;
+}
     .content > div > span {
         width: 100%;
     }
