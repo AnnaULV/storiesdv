@@ -1,7 +1,7 @@
 $(document).ready(function () {
     "use strict";
 
-    new Swiper(".main > .gallery.swiper-container > .swiper", {
+    new Swiper(".gallery.swiper-container > .swiper", {
         slidesPerView: 1,
         autoplay: {
             delay: 3000,
@@ -13,12 +13,12 @@ $(document).ready(function () {
             crossFade: true
         },
         pagination: {
-            el: ".main > .swiper-pagination",
+            el: ".swiper-pagination",
             clickable: true
         },
          navigation: {
-            nextEl: ".main > .gallery.swiper-container > .swiper-button.next",
-            prevEl: ".main > .gallery.swiper-container > .swiper-button.prev"
+            nextEl: ".gallery.swiper-container > .swiper-button.next",
+            prevEl: ".gallery.swiper-container > .swiper-button.prev"
         }
     });
     return false;

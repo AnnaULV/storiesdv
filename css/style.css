@@ -24,16 +24,9 @@ body {
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
+    overflow-x: hidden;
     position: relative;
 height: 100%;
-}
-
-.main {
-    width: 100%;
-}
-
-.main > .gallery + div {
-    display: flex;
 }
 
 .center {
@@ -41,14 +34,6 @@ height: 100%;
     margin: 0 auto;
     padding-left: 3rem;
     padding-right: 3rem;
-}
-
-.swiper-slide > div > .center {
-    max-width: 146rem;
-}
-
-.swiper-pagination.center {
-    max-width: 170rem;
 }
 
 .button {

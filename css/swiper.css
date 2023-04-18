@@ -60,7 +60,7 @@
     touch-action: pan-y;
 }
 
-.main > .gallery.swiper-container {
+.gallery.swiper-container {
     position: absolute;
     top: 0;
     left: 0;
@@ -69,12 +69,12 @@
     height: 100%;
 }
 
-.main > .gallery.swiper-container > .swiper > .swiper-wrapper > .swiper-slide {
+.gallery.swiper-container > .swiper > .swiper-wrapper > .swiper-slide {
     height: 100%;
     transition-property: opacity;
 }
 
-.main > .gallery.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > div {
+.gallery.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > div {
     width: 100%;
     height: 100%;
     background-size: cover;
