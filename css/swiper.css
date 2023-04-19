@@ -1,5 +1,12 @@
 @charset "UTF-8";
 
+.swiper-container,
+.swiper-container > .swiper,
+.swiper-container > .swiper > .swiper-wrapper,
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide {
+    position: relative;
+}
+
 .swiper-container > .swiper > .swiper-wrapper {
     display: flex;
 }
