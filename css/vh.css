@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
-.wrapper {
+.wrapper,
+.workspace {
   height: calc(var(--vh, 1vh) * 100);
 }
 
