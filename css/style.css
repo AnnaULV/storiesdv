@@ -38,6 +38,7 @@ header {
 
 article {    
     background-color: darkgray;
+    height: 100%;
 }
 
 .center {
