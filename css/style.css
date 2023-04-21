@@ -27,6 +27,11 @@ height: 100%;
     background-color: antiquewhite;
 }
 
+article {
+     height: 100%;
+    background-color: dimgrey;
+}
+
 header {
     position: sticky;
     min-height: 10rem !important;
