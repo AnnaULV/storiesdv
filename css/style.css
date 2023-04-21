@@ -18,15 +18,9 @@ body {
     height: 100%;
     overflow: hidden;
     position: relative;
+    background-color: darkorange;
 }
 
-.workspace {
-    overflow-y: scroll;
-    overflow-x: hidden;
-    position: relative;
-height: 100%;
-    background-color: blue;
-}
 
 header {
     position: sticky;
