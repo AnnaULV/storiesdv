@@ -19,6 +19,13 @@ body {
     background-color: aquamarine;
 }
 
+.workspace {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: relative;
+height: 100%;
+    background-color: antiquewhite;
+}
 
 header {
     position: sticky;
