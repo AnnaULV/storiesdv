@@ -1,20 +1,16 @@
-/* функция — вызывается после того, как документ полностью загружен */
 function isReady() {
-  /* обрабатывать код в «строгом режиме» */
   "use strict";
-  /* переменная (vh) — расчет реальной высоты рабочей области (важно для смартфонов) */
   let vh = $(window).innerHeight() * 0.01;
-  /* устанавливаем свойство для всего документа (html) исходя из расчета реальной высоты */
-  document.documentElement.style.setProperty("--vh", `${vh}px`);
-     if (!vhCSS) {
-    /* загружаем дополнительный CSS-файл */
-    loadCSS("css/vh.css?" + $.now(), "stylesheet");
-    /* дополнительный CSS-файл успешно загружен (назначение переменной vhCSS значения — TRUE) */
-    vhCSS = true;
-  }
-    
+  document.documentElement.style.setProperty("--vh", `${vh}px`);   
   return false;
 }
+
+$(window).on("load", function () {
+  /* обрабатывать код в «строгом режиме» */
+  "use strict";
+  isReady();
+  return false;
+});
 
 /* окно поменяло ориентацию горизонтально <——> вертикально */
 $(window).on("orientationchange", function () {
@@ -22,6 +18,7 @@ $(window).on("orientationchange", function () {
   "use strict";
   /* перезагрузить документ */
   location.reload();
+  return false;
 });
 
 /* окно поменяло размер */
@@ -30,4 +27,5 @@ $(window).on("resize", function () {
   "use strict";
   /* повторный вызов функции — после того, как документ полностью загружен (корректировка отображения элементов) */
   isReady();
+  return false;
 });
