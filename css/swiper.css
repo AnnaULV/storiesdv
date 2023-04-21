@@ -26,7 +26,7 @@
 }
 
 .swiper-container > .swiper > .swiper-wrapper > .swiper-slide {
-    height: 200vh;
+    height: 100%;
     transition-property: opacity;
     flex-shrink: 0;
 }
