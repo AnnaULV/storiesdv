@@ -14,8 +14,6 @@ body {
 .wrapper {
     width: 100%;
     max-width: 100vw;
-    max-height: 100vh;
-    height: 100%;
     overflow: hidden;
     position: relative;
     background-color: darkorange;
