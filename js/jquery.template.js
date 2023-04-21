@@ -6,7 +6,13 @@ function isReady() {
   let vh = $(window).innerHeight() * 0.01;
   /* устанавливаем свойство для всего документа (html) исходя из расчета реальной высоты */
   document.documentElement.style.setProperty("--vh", `${vh}px`);
-
+     if (!vhCSS) {
+    /* загружаем дополнительный CSS-файл */
+    loadCSS("css/vh.css?" + $.now(), "stylesheet");
+    /* дополнительный CSS-файл успешно загружен (назначение переменной vhCSS значения — TRUE) */
+    vhCSS = true;
+  }
+    
   return false;
 }
 
