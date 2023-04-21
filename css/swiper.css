@@ -7,6 +7,11 @@
     position: relative;
 }
 
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
 .swiper-container > .swiper {
     width: 100%;
     height: 100%;
@@ -28,6 +33,9 @@
 .swiper-container > .swiper > .swiper-wrapper > .swiper-slide {
     height: 100%;
     transition-property: opacity;
+}
+
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide {
     flex-shrink: 0;
 }
 
