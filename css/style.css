@@ -29,6 +29,7 @@ height: 100%;
 
 article {
      height: 100%;
+    margin-top: -10rem;
     background-color: dimgrey;
 }
 
