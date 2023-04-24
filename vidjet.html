@@ -16,7 +16,9 @@
     <div class="wrapper">
         <div class="workspace">
             <header></header>
-            <article></article>
+            <article>
+                <div class="swiper-container"></div>
+            </article>
             <footer></footer>
         </div>
     </div>
@@ -31,7 +33,7 @@
             return false;
         }
 
-        let jsonCSS = JSON.parse('[{"source":"css/reset.css"},{"source":"css/style.css"},{"source":"css/vh.css"}]');
+        let jsonCSS = JSON.parse('[{"source":"css/reset.css"},{"source":"css/style.css"},{"source":"css/swiper.css"},{"source":"css/vh.css"}]');
         jsonCSS.forEach(function(e, i) {
             setTimeout(function() {
                 loadCSS(jsonCSS[i].source + "?" + $.now());
