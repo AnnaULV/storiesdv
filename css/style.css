@@ -28,7 +28,7 @@ height: 100%;
 }
 
 article {
-     height: 100%;
+     height: 200vh;
     margin-top: -10rem;
     margin-bottom: -10rem;
     background-color: dimgrey;
@@ -41,11 +41,6 @@ header {
     opacity: 0.4;
     z-index: 2;
     top:0;
-}
-
-article {    
-    background-color: darkgray;
-    height: 100%;
 }
 
 .center {
