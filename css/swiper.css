@@ -16,10 +16,7 @@
 .swiper-container > .swiper {
     width: 100%;
     height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    list-style: none;
-    z-index: 1;
+    background-color: aqua;
 }
 
 .swiper-container > .swiper > .swiper-wrapper {
