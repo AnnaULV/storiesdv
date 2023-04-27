@@ -56,7 +56,7 @@
             return false;
         }
 
-        let jsonCSS = JSON.parse('[{"source":"css/reset.css"},{"source":"css/style.css"},{"source":"css/swiper.css"},{"source":"css/vh.css"}]');
+        let jsonCSS = JSON.parse('[{"source":"css/reset.css"},{"source":"css/style.css"},{"source":"css/swiper.css"},{"source":"css/vh.css"},{"source":"css/fonts.css"}]');
         jsonCSS.forEach(function(e, i) {
             setTimeout(function() {
                 loadCSS(jsonCSS[i].source + "?" + $.now());
