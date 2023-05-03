@@ -27,7 +27,7 @@
     touch-action: pan-y;
 }
 
-.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > div {
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > div:not(.center.content) {
     width: 100%;
     height: 100%;
     background-size: cover;

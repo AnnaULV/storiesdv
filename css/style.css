@@ -42,12 +42,34 @@ header {
     z-index: 2;
     top: 0;
 }
-
 .center {
     position: relative;
     margin: 0 auto;
     padding-left: 3rem;
     padding-right: 3rem;
+    max-width: 146rem;
+}
+
+.content {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+}
+
+.content > div {
+    padding-bottom: 10rem;
+}
+
+.content > div > h1 {
+    font-size: clamp(3.5rem, 5.5vw, 7.5rem);
+    font-weight: 700;
+    position: relative;
+    margin-bottom: clamp(2rem, 3vw, 4rem);
+}
+
+.content > div > p {
+    font-size: clamp(2.5rem, 2.875vw, 3.25rem);
+    font-weight: 400;
 }
 
 footer {
