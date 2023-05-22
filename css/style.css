@@ -37,8 +37,6 @@ article {
 header {
     position: sticky;
     min-height: 10rem !important;
-    background-color: crimson;
-    opacity: 0.4;
     z-index: 2;
     top: 0;
 }

@@ -12,6 +12,10 @@ $(document).ready(function () {
         fadeEffect: {
             crossFade: true
         },
+         pagination: {
+            el: ".workspace > header > .swiper-pagination",
+            clickable: true
+        }
     });
     return false;
 });
