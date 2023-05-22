@@ -46,10 +46,6 @@
     transition: opacity .25s ease-in-out;
 }
 
-.swiper-button:hover {
-    opacity: 1;
-}
-
 .swiper-button.next {
     margin-left: 1rem;
 }
