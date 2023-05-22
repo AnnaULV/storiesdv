@@ -36,6 +36,23 @@
     background-blend-mode: color, darken;
 }
 
+footer > div > div > .swiper-button {
+    opacity: .25;
+    transition: opacity .25s ease-in-out;
+}
+
+footer > div > div > .swiper-button:hover {
+    opacity: 1;
+}
+
+footer > div > div > .swiper-button.next {
+    margin-left: 1rem;
+}
+
+footer > div > div > .swiper-button.prev {
+    transform: scale(-1, 1);
+}
+
 .swiper-pagination {
     position: relative;
     z-index: 1;

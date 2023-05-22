@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+button::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    content: "";
+    width: 100%;
+    height: 100%;
+}
+
+button {
+    display: inline-flex;
+    position: relative;
+    align-items: center;
+    cursor: pointer;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    height: 6rem;
+    min-width: 6rem;
+}
+
+button > span {
+    margin-left: 3rem;
+    margin-right: 3rem;
+    font-family: "content", sans-serif;
+    font-weight: 600;
+    white-space: nowrap;
+    font-size: 2rem;
+    color: #fff;
+}
+
+button.orange {
+    background-color: rgba(240, 145, 30, 1);
+}
+
+.button.icon > span:first-child {
+  width: 3rem;
+  height: 3rem;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+}
+
+.button.icon:not(.text) > span:first-child + span, 
+.button.text:not(.icon) > span:first-child {
+  display: none;
+}

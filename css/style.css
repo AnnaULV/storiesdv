@@ -87,29 +87,10 @@ footer > div {
     align-items: center;
 }
 
-button {
-    display: inline-flex;
+footer > div > div {
     position: relative;
-    align-items: center;
-    cursor: pointer;
-    border: 0;
-    margin: 0;
-    padding: 0;
-    height: 6rem;
-    min-width: 6rem;
-    background-color: rgba(240, 145, 30, 1);
+    display: flex;
 }
-
-button > span {
-    margin-left: 3rem;
-    margin-right: 3rem;
-    font-family: "content", sans-serif;
-    font-weight: 600;
-    white-space: nowrap;
-    font-size: 2rem;
-    color: #fff;
-}
-
 
 @media (min-width : 1441px) {}
 

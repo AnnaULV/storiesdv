@@ -15,6 +15,10 @@ $(document).ready(function () {
          pagination: {
             el: ".workspace > header > .swiper-pagination",
             clickable: true
+        },
+        navigation: {
+            nextEl: "footer > div > div > .swiper-button.next",
+            prevEl: "footer > div > div > .swiper-button.prev"
         }
     });
     return false;

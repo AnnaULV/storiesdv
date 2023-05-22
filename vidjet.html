@@ -71,8 +71,21 @@
             </article>
             <footer>
                 <div class="center">
-                    <div></div>
-                    <button>
+                    <div>
+                        <div class="swiper-button prev">
+                                <button class="button border transparent icon" type="button" aria-label="Назад">
+                                    <span style="background-image: url(img/arrow.svg)"></span>
+                                    <span>Назад</span>
+                                </button>
+                            </div>
+                            <div class="swiper-button next">
+                                <button class="button border transparent icon" type="button" aria-label="Вперед">
+                                    <span style="background-image: url(img/arrow.svg)"></span>
+                                    <span>Вперед</span>
+                                </button>
+                            </div>
+                    </div>
+                    <button class="orange">
                         <span>Оставьте заявку</span>
                     </button>
                 </div>
@@ -90,7 +103,7 @@
             return false;
         }
 
-        let jsonCSS = JSON.parse('[{"source":"css/reset.css"},{"source":"css/style.css"},{"source":"css/swiper.css"},{"source":"css/vh.css"},{"source":"css/fonts.css"}]');
+        let jsonCSS = JSON.parse('[{"source":"css/reset.css"},{"source":"css/style.css"},{"source":"css/swiper.css"},{"source":"css/vh.css"},{"source":"css/fonts.css"},{"source":"css/button.css"}]');
         jsonCSS.forEach(function(e, i) {
             setTimeout(function() {
                 loadCSS(jsonCSS[i].source + "?" + $.now());
