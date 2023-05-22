@@ -36,20 +36,25 @@
     background-blend-mode: color, darken;
 }
 
-footer > div > div > .swiper-button {
-    opacity: .25;
+.swiper-button.swiper-button-disabled {
+    opacity: .5;
+}
+
+.swiper-button {
+    display: flex;
+     opacity: 1;
     transition: opacity .25s ease-in-out;
 }
 
-footer > div > div > .swiper-button:hover {
+.swiper-button:hover {
     opacity: 1;
 }
 
-footer > div > div > .swiper-button.next {
+.swiper-button.next {
     margin-left: 1rem;
 }
 
-footer > div > div > .swiper-button.prev {
+.swiper-button.prev {
     transform: scale(-1, 1);
 }
 

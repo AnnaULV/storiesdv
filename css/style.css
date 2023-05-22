@@ -87,11 +87,6 @@ footer > div {
     align-items: center;
 }
 
-footer > div > div {
-    position: relative;
-    display: flex;
-}
-
 @media (min-width : 1441px) {}
 
 @media (min-width : 1201px) and (max-width : 1440px) {}
