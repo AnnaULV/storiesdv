@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-button::after {
+.button::after {
     position: absolute;
     top: 0;
     left: 0;
@@ -10,7 +10,7 @@ button::after {
     height: 100%;
 }
 
-button {
+.button {
     display: inline-flex;
     position: relative;
     align-items: center;
@@ -19,11 +19,15 @@ button {
     border: 0;
     margin: 0;
     padding: 0;
-    height: 6rem;
-    min-width: 6rem;
+    height: 5rem;
+    min-width: 5rem;
 }
 
-button.text > span:last-child {
+.button.hover:hover {
+    opacity: 1;
+}
+
+.button.text > span:last-child {
     margin-left: 3rem;
     margin-right: 3rem;
     font-family: "content", sans-serif;
@@ -31,10 +35,6 @@ button.text > span:last-child {
     white-space: nowrap;
     font-size: 2rem;
     color: #fff;
-}
-
-button.orange {
-    background-color: rgba(240, 145, 30, 1);
 }
 
 .button.icon > span:first-child {
