@@ -73,6 +73,11 @@ header {
     font-weight: 400;
 }
 
+.content > div > a {
+    text-decoration: none;
+    font-size: clamp(2rem, 2.5vw, 3rem);
+}
+
 footer {
     position: sticky;
     min-height: 10rem !important;
