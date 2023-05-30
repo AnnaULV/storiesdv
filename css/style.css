@@ -59,8 +59,8 @@ header {
 }
 
 .content > div:first-child {
-    width: 480px;
-    height: 480px;
+    width: clamp(40rem, 50vw, 60rem);
+    height: clamp(40rem, 50vw, 60rem);
     background-color: aquamarine;
     margin-top: 10rem;
     position: absolute;
