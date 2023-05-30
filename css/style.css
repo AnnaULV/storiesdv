@@ -39,7 +39,7 @@ header {
     min-height: 10rem !important;
     z-index: 2;
     top: 0;
-    
+
 }
 
 .center {
@@ -51,31 +51,39 @@ header {
 }
 
 .content {
+    position: relative;
     display: flex;
     align-items: flex-end;
     height: 100%;
     text-shadow: #5f5f5f 1px 0 10px;
 }
 
-.content > div {
+.content > div:first-child {
+    width: 480px;
+    height: 480px;
+    background-color: aquamarine;
+    margin-top: 10rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.content > div:last-child {
     padding-bottom: 10rem;
 }
 
-.content > div > h1 {
+.content > div:last-child > h1 {
     font-size: clamp(3.5rem, 5.5vw, 7.5rem);
     font-weight: 700;
     position: relative;
     margin-bottom: clamp(2rem, 3vw, 4rem);
 }
 
-.content > div > p {
+.content > div:last-child > p {
     font-size: clamp(2.5rem, 2.875vw, 3.25rem);
     font-weight: 400;
-}
-
-.content > div > a {
-    text-decoration: none;
-    font-size: clamp(2rem, 2.5vw, 3rem);
 }
 
 footer {
