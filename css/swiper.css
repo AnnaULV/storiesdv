@@ -1,88 +1,133 @@
 @charset "UTF-8";
 
+.swiper-pagination,
+.swiper-pagination > .swiper-pagination-bullet,
 .swiper-container,
 .swiper-container > .swiper,
 .swiper-container > .swiper > .swiper-wrapper,
-.swiper-container > .swiper > .swiper-wrapper > .swiper-slide {
-    position: relative;
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide,
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image + div {
+  position: relative;
 }
 
 .swiper-container,
 .swiper-container > .swiper,
 .swiper-container > .swiper > .swiper-wrapper,
 .swiper-container > .swiper > .swiper-wrapper > .swiper-slide {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
+.swiper-pagination,
+.swiper-button,
 .swiper-container > .swiper > .swiper-wrapper {
-    display: flex;
+  display: flex;
 }
 
 .swiper-container > .swiper > .swiper-wrapper > .swiper-slide {
-    flex-shrink: 0;
+  flex-shrink: 0;
+  background-color: rgba(0, 0, 0, .4);
 }
 
-.swiper-pointer-events {
-    touch-action: pan-y;
+/* .swiper-container > .swiper > .swiper-wrapper > .swiper-slide > div:not(.center.content) */
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide {
+  /* width: 100%;
+  height: 100%; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: color, darken;
+  padding: 10rem 0;
 }
 
-.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > div:not(.center.content) {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-blend-mode: color, darken;
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  overflow: hidden;
+  /* text-shadow: #5f5f5f 1px 0 10px; */
+}
+
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image {
+  width: clamp(40rem, 50vw, 60rem);
+  height: clamp(40rem, 50vw, 60rem);
+  background-color: rgba(0, 0, 0, .75);
+  /* margin-top: 10rem; */
+  position: absolute;
+  top: 0;
+  right: 3rem;
+  /* margin-left: 3rem;
+  margin-right: 3rem; */
+  z-index: 1;
+  max-width: 105rem;
+  max-height: 105rem;
+}
+
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image + div {
+  font-size: clamp(2.5rem, 2.75vw, 3rem);
+  /* padding: 10rem 0; */
+  z-index: 2;
+  text-shadow: .125rem .125rem .25rem rgba(0, 0, 0, .25);
+}
+
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image + div > .heading {
+  font-size: clamp(3.5rem, 5.5vw, 7.5rem);
+  font-weight: 700;
+  margin-bottom: clamp(2rem, 3vw, 4rem);
+}
+
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image + div > p {
+  /* font-size: clamp(2.5rem, 2.75vw, 3rem);
+  font-weight: 400; */
 }
 
 .swiper-button.swiper-button-disabled {
-    opacity: .5;
+  opacity: .5;
 }
 
 .swiper-button {
-    display: flex;
-     opacity: 1;
-    transition: opacity .25s ease-in-out;
+  transition: opacity .25s ease-in-out;
 }
 
 .swiper-button.next {
-    margin-left: 1rem;
+  margin-left: 1rem;
 }
 
 .swiper-button.prev {
-    transform: scale(-1, 1);
+  transform: scale(-1, 1);
 }
 
 .swiper-pagination {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    left: 0;
-    top: calc(5rem - .5rem);
-    width: 100%;
+  /* position: relative; */
+  z-index: 1;
+  align-items: center;
+  left: 0;
+  top: calc(5rem - .5rem);
+  width: 100%;
 }
 
 .swiper-pagination > .swiper-pagination-bullet {
-    width: 100%;
-    height: .5rem;
-    position: relative;
-    z-index: 10;
-    background-color: #FFFFFF;
-    opacity: .25;
+  width: 100%;
+  height: .5rem;
+  /* position: relative; */
+  z-index: 10;
+  background-color: #FFFFFF;
+  opacity: .25;
 }
 
 .swiper-pagination > .swiper-pagination-bullet:not(:last-child) {
-    margin: 0 2rem 0 0;
+  margin: 0 2rem 0 0;
 }
 
 .swiper-pagination > .swiper-pagination-bullet.swiper-pagination-bullet-active {
-    opacity: 1;
+  opacity: 1;
 }
 
 .swiper-pagination > .swiper-pagination-bullet {
-    cursor: pointer;
-    transition: transform .25s ease-in-out;
+  cursor: pointer;
+  transition: transform .25s ease-in-out;
 }
 
+.swiper-pointer-events {
+  touch-action: pan-y;
+}
