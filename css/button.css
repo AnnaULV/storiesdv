@@ -38,14 +38,36 @@
 }
 
 .button.icon > span:first-child {
-  width: 3rem;
-  height: 3rem;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: contain;
+    width: 3rem;
+    height: 3rem;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
 }
 
-.button.icon:not(.text) > span:first-child + span, 
+.button.icon:not(.text) > span:first-child + span,
 .button.text:not(.icon) > span:first-child {
-  display: none;
+    display: none;
+}
+
+.content > div:last-child > .button.icon.text.reverse {
+    flex-direction: row-reverse;
+    margin-left: -3rem;
+    margin-top: -3rem;
+    cursor: pointer;
+}
+
+.content > div:last-child > .button.icon.text.reverse > span:first-child {
+    width: 3.75rem;
+    transition: all 0.25s ease;
+    background-size: auto 200%;
+    background-position: 100% 50%;
+}
+
+.content > div:last-child > .button.icon.text.reverse:hover > span:first-child {
+    width: 5rem;
+}
+
+.button.icon.text.reverse > span:last-child {
+    font-size: 2.5rem;
 }
