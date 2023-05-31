@@ -72,3 +72,25 @@
 .button.text:not(.icon) > span:first-child {
   display: none;
 }
+
+.button.icon.text.reverse {
+    flex-direction: row-reverse;
+    margin-left: -2rem;
+    margin-top: -2rem;
+    cursor: pointer;
+}
+
+.button.icon.text.reverse > span:first-child {
+    width: 3.75rem;
+    transition: all 0.25s ease;
+    background-size: auto 200%;
+    background-position: 100% 50%;
+}
+
+.button.icon.text.reverse:hover > span:first-child {
+    width: 5rem;
+}
+
+.button.icon.text.reverse > span:last-child {
+    font-size: 2.5rem;
+}
