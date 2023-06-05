@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- meta name="author" content="tarantul web development zone | www.tarantul.zone" / -->
+    <meta name="description" content="Важный META-тег для краткого описания содержимого страницы (документа) и формирования сниппета (~160 символов)">
+    <script defer src="js/jquery.min.js"></script>
+    <script defer src="js/jquery.template.js"></script>
+    <script defer src="js/swiper.min.js"></script>
+    <script defer src="js/main.js"></script>
+    <title>Веб-разработка и развитие проектов - tarantul web development</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="workspace">
+            <div class="section">
+                <div class="center">
+                    <div class="form feedback">
+                        <span>Запрос</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function loadCSS(source, type) {
+            "use strict";
+            let s = document.getElementsByTagName("head")[0];
+            let sc = document.createElement("link");
+            sc.rel = "stylesheet";
+            sc.href = source;
+            s.appendChild(sc);
+            return false;
+        }
+
+        let jsonCSS = JSON.parse('[{"source":"css/reset.css"},{"source":"css/style.css"},{"source":"css/form.css"},{"source":"css/vh.css"},{"source":"css/fonts.css"},{"source":"css/button.css"}]');
+        jsonCSS.forEach(function(e, i) {
+            setTimeout(function() {
+                loadCSS(jsonCSS[i].source + "?" + $.now());
+            }, 250);
+        });
+
+    </script>
+</body>
+
+</html>

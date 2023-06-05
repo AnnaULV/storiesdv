@@ -26,6 +26,15 @@ function isReady() {
   return false;
 }
 
+  $(document).on("click", ".action",function (e) {
+    if ($(".wrapper").length > 0) {
+      if (!$(".wrapper").hasClass("aside")) {
+        $(".wrapper").addClass("aside");
+      
+    }}
+    e.preventDefault();
+  });
+
 $(window).on("load", function () {
   "use strict";
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
