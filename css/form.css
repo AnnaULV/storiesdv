@@ -236,7 +236,7 @@ form > ul > li > div > label > input:focus {
 }
 
 form > ul > li > div > label > input.field.error {
-  border: solid .125rem #BA0C2F;
+  border: solid .125rem rgba(240, 145, 30, 1);
 }
 
 form > ul > li > div.required > label.required > span > span::after {
@@ -244,7 +244,7 @@ form > ul > li > div.required > label.required > span > span::after {
 }
 
 form > ul > li > div > label > input.field.error + span > span {
-  color: #BA0C2F;
+  color: rgba(240, 145, 30, 1);
 }
 
 form > ul > li > div.required > label.required > input.field.error + span > span::after {
