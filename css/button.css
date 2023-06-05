@@ -94,3 +94,7 @@
 .button.icon.text.reverse > span:last-child {
     font-size: 2.5rem;
 }
+
+.button.feedback {
+    height: 6rem;
+}
