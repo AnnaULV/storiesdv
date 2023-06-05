@@ -87,6 +87,10 @@ body {
     max-width: 146rem;
 }
 
+.center.content {
+    max-width: 98rem;
+}
+
 header,
 footer {
     position: sticky;
@@ -126,6 +130,14 @@ footer > div {
     height: inherit;
     align-items: center;
 }
+
+.section {
+    padding-top: clamp(5rem, 7.5vw, 13rem);
+    padding-bottom: clamp(5rem, 7.5vw, 13rem);
+    position: relative;
+    height: 100%;
+}
+
 
 @media (min-width : 1441px) {}
 

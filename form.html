@@ -9,8 +9,10 @@
     <meta name="description" content="Важный META-тег для краткого описания содержимого страницы (документа) и формирования сниппета (~160 символов)">
     <script defer src="js/jquery.min.js"></script>
     <script defer src="js/jquery.template.js"></script>
+    <script defer src="js/jquery.form.js"></script>
+    <script defer src="js/jquery.inputmask.js"></script>
     <script defer src="js/swiper.min.js"></script>
-    <script defer src="js/main.js"></script>
+    <script defer src="js/main.js"></script> 
     <title>Веб-разработка и развитие проектов - tarantul web development</title>
 </head>
 
@@ -20,7 +22,70 @@
             <div class="section">
                 <div class="center">
                     <div class="form feedback">
-                        <span>Запрос</span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="center content">
+                    <div class="form feedback">
+                        <div>
+                            <p></p>
+                            <p>
+                                <span>Ваша заявка успешно отправлена.</span>
+                                <span>В ближайшее время с Вами свяжется наш специалист и ответит на все интересующие Вас вопросы.</span>
+                            </p>
+                            <form name="feedback" method="post" action="#" autocomplete="off">
+                                <ul>
+                                    <li>
+                                        <div class="required name">
+                                            <label class="required">
+                                                <input class="field" type="text" name="QUEST[NAME]" value="" data-check="name" data-form="feedback" autocomplete="off">
+                                                <span>
+                                                    <span>Имя</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="required phone">
+                                            <label class="required">
+                                                <input class="field" type="tel" name="QUEST[PHONE]" value="" data-check="phone" data-form="feedback" autocomplete="off">
+                                                <span>
+                                                    <span>Телефон</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="email">
+                                            <label>
+                                                <input class="field" type="text" name="QUEST[EMAIL]" value="" data-check="email" data-form="feedback" autocomplete="off">
+                                                <span>
+                                                    <span>E-mail</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="message">
+                                            <label>
+                                                <textarea class="field" name="QUEST[MESSAGE]" data-form="feedback" autocomplete="off"></textarea>
+                                                <span>
+                                                    <span>Текст сообщения</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <ol>
+                                            <li>
+                                                <div>
+                                                    <button type="button" aria-label="Отправить" class="button red text feedback">
+                                                        <span></span>
+                                                        <span>Отправить</span>
+                                                    </button>
+                                                </div>
+                                                <p>Нажимая кнопку <strong>Отправить</strong> вы даете согласие на обработку персональных данных в соответсвии с <a href="/policy/" title="политика конфиденциальности">политикой конфиденциальности</a></p>
+                                                <!--p>Нажимая кнопку <strong>Отправить</strong>, вы даете <a href="#" title="согласие на обработку персональных данных">согласие на обработку персональных данных</a></p-->
+                                            </li>
+                                        </ol>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
