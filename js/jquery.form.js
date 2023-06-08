@@ -48,17 +48,17 @@ function isCheck(el) {
 function isRequire(classname) {
   "use strict";
   if ($(".form." + classname + " input.error").length > 0) {
-    if ($(".form > div > form ol > li > div > button." + classname).hasClass("active")) {
-      $(".form > div > form ol > li > div > button." + classname).removeClass("active");
+    if ($(".form > div > form ul > li > button." + classname).hasClass("active")) {
+      $(".form > div > form ul > li > button." + classname).removeClass("active");
     }
   } else {
     if ($(".form." + classname + " label.required > input").length !== $(".form." + classname + " label.required > input.success").length) {
-      if ($(".form > div > form ol > li > div > button." + classname).hasClass("active")) {
-        $(".form > div > form ol > li > div > button." + classname).removeClass("active");
+      if ($(".form > div > form ul > li > button." + classname).hasClass("active")) {
+        $(".form > div > form ul > li > button." + classname).removeClass("active");
       }
     } else {
-      if (!$(".form > div > form ol > li > div > button." + classname).hasClass("active")) {
-        $(".form > div > form ol > li > div > button." + classname).addClass("active");
+      if (!$(".form > div > form ul > li > button." + classname).hasClass("active")) {
+        $(".form > div > form ul > li > button." + classname).addClass("active");
       }
     }
   }
@@ -93,10 +93,6 @@ function isForm(form, ct_data) {
       if ($(".button." + form).hasClass("active")) {
         $(".button." + form).removeClass("active");
       }
-      isCalltouch(ct_data);
-      ym(80608846, 'reachGoal', form);
-      console.log("СЃРѕРѕР±С‰РµРЅРёРµ СѓСЃРїРµС€РЅРѕ РѕС‚РїСЂР°РІР»РµРЅРѕ");
-      return true;
     } else {
       $(".form." + form).addClass("shake");
       if (result.field) {
@@ -118,7 +114,7 @@ function isForm(form, ct_data) {
       return false;
     }
   }).fail(function (result) {
-    console.log("РѕС€РёР±РєР° РѕС‚РїСЂР°РІРєРё С„РѕСЂРјС‹");
+    console.log("ошибка");
     return false;
   });
 }
@@ -157,26 +153,8 @@ $(document).ready(function () {
   $(document).on("click", ".button.feedback", function (e) {
     if ($(this).hasClass("active")) {
       if (!$(".form.feedback").hasClass("success")) {
-        var ct_data = {
-          sessionId: window.ct("calltracking_params", "utnwhqm1").sessionId
-        };
-        ct_data.comment = $(".form.feedback textarea").val();
-        $(".form.feedback input").each(function () {
-          if ($(this).attr("name") === "QUEST[FORM]") {
-            ct_data.subject = $(this).val();
-          }
-          if ($(this).attr("name") === "QUEST[NAME]") {
-            ct_data.fio = $(this).val();
-          }
-          if ($(this).attr("name") === "QUEST[PHONE]") {
-            ct_data.phoneNumber = $(this).val();
-          }
-          if ($(this).attr("name") === "QUEST[EMAIL]") {
-            ct_data.email = $(this).val();
-          }
-        });
-        /* $(".form.feedback").addClass("success"); */
-        isForm("feedback", ct_data);
+        $(".form.feedback").addClass("success");
+        /* isForm("feedback"); */
       }
     } else {
       $(".form.feedback").addClass("shake");
@@ -191,78 +169,6 @@ $(document).ready(function () {
     }, 1000);
     e.preventDefault();
   });
-
-  $(document).on("click", ".button.callback", function (e) {
-    if ($(this).hasClass("active")) {
-      if (!$(".form.callback").hasClass("success")) {
-        var ct_data = {
-          sessionId: window.ct("calltracking_params", "utnwhqm1").sessionId
-        };
-        $(".form.callback input").each(function () {
-          if ($(this).attr("name") === "QUEST[FORM]") {
-            ct_data.subject = $(this).val();
-          }
-          if ($(this).attr("name") === "QUEST[NAME]") {
-            ct_data.fio = $(this).val();
-          }
-          if ($(this).attr("name") === "QUEST[PHONE]") {
-            ct_data.phoneNumber = $(this).val();
-          }
-        });
-        /* $(".form.callback").addClass("success"); */
-        isForm("callback", ct_data);
-      }
-    } else {
-      $(".form.callback").addClass("shake");
-      $(".form.callback > div > form > ul > li > div > label.required > input").each(function () {
-        isCheck(this);
-      });
-    }
-    setTimeout(function () {
-      if ($(".form.callback").hasClass("shake")) {
-        $(".form.callback").removeClass("shake");
-      }
-    }, 1000);
-    e.preventDefault();
-  });
-
-  $(document).on("click", ".checkbox > span", function (e) {
-    if (!$(this).hasClass("checked")) {
-      $(this).addClass("checked");
-      $(this).prev("input").checked = true;
-      $(this).prev("input").prop("checked", true);
-    } else {
-      $(this).removeClass("checked");
-      $(this).prev("input").checked = false;
-      $(this).prev("input").prop("checked", false);
-    }
-    if ($(this).prev("input").data("changed") && $(this).prev("input").data("changed") === "filter") {
-      isFilter("filter");
-    }
-    e.preventDefault();
-  });
-
-  $(document).on("touchend mouseup", ".button.clear", function (e) {
-    $(".filter > form > ul > li > div > ol > li > label > .changed").each(function (i) {
-      $(this).checked = false;
-      $(this).prop("checked", false);
-      if ($(this).next("span").hasClass("checked")) {
-        $(this).next("span").removeClass("checked");
-      }
-    });
-    isFilter("filter");
-    e.preventDefault();
-  });
-
-  $(document).on("click", "#chips_child_list > div > button", function (e) {
-    if ($(this).data("checkbox")) {
-      $(".checkbox > span." + $(this).data("checkbox")).click();
-    }
-  });
-
-  if ($(".wrapper > .aside > .close + .indent > .filter > form").length > 0) {
-    isFilter("filter");
-  }
 
   $("input[type=tel]").inputmask("+7 (999) 999-99-99");
   return false;

@@ -19,8 +19,14 @@
   border: 0;
   margin: 0;
   padding: 0;
-  height: 5rem;
-  min-width: 5rem;
+  height: clamp(5rem, 6vw, 7rem);
+  min-width: clamp(5rem, 6vw, 7rem);
+  box-shadow: .125rem .125rem .25rem rgba(0, 0, 0, .25);
+}
+
+.circle .button.hover::before,
+.circle .button {
+  border-radius: clamp(2.5rem, 3vw, 3.5rem);
 }
 
 .button.hover::before {
@@ -36,12 +42,8 @@
 }
 
 .button.hover:hover::before {
-  background: rgba(0, 0, 0, .1);
+  background: rgba(0, 0, 0, .25);
 }
-
-/* .button.hover:hover {
-  opacity: 1;
-} */
 
 .button.text > span {
   position: relative;
@@ -49,14 +51,12 @@
 }
 
 .button.text > span:last-child {
-  /* margin-left: 3rem;
-  margin-right: 3rem; */
-  margin-left: 2rem;
-  margin-right: 2rem;
+  margin-left: clamp(2rem, 2.5vw, 3rem);
+  margin-right: clamp(2rem, 2.5vw, 3rem);
   font-family: "content", sans-serif;
   font-weight: 600;
   white-space: nowrap;
-  font-size: 2rem;
+  font-size: clamp(2rem, 2.125vw, 2.25rem);
   color: #fff;
 }
 
@@ -64,37 +64,11 @@
   width: 3rem;
   height: 3rem;
   background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: contain;
+  background-position: 70% 50%;
+  background-size: 2.25rem 2.25rem;
 }
 
 .button.icon:not(.text) > span:first-child + span,
 .button.text:not(.icon) > span:first-child {
   display: none;
-}
-
-.button.icon.text.reverse {
-    flex-direction: row-reverse;
-    margin-left: -2rem;
-    margin-top: -2rem;
-    cursor: pointer;
-}
-
-.button.icon.text.reverse > span:first-child {
-    width: 3.75rem;
-    transition: all 0.25s ease;
-    background-size: auto 200%;
-    background-position: 100% 50%;
-}
-
-.button.icon.text.reverse:hover > span:first-child {
-    width: 5rem;
-}
-
-.button.icon.text.reverse > span:last-child {
-    font-size: 2.5rem;
-}
-
-.button.feedback {
-    height: 6rem;
 }

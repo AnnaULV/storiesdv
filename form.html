@@ -7,16 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- meta name="author" content="tarantul web development zone | www.tarantul.zone" / -->
     <meta name="description" content="Важный META-тег для краткого описания содержимого страницы (документа) и формирования сниппета (~160 символов)">
-    <script defer src="js/jquery.min.js"></script>
-    <script defer src="js/jquery.template.js"></script>
-    <script defer src="js/jquery.form.js"></script>
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script defer src="js/jquery.inputmask.js"></script>
-    <script defer src="js/swiper.min.js"></script>
-    <script defer src="js/main.js"></script> 
+    <script defer src="js/jquery.template.js"></script>
+    <script defer src="js/jquery.form.js?sdas"></script>
     <title>Веб-разработка и развитие проектов - tarantul web development</title>
 </head>
 
-<body>
+<body class="circle">
     <div class="wrapper">
         <div class="workspace">
             <div class="section">
@@ -25,10 +23,10 @@
                         <span></span>
                     </div>
                 </div>
-                <div class="center content">
+                <div class="center">
                     <div class="form feedback">
                         <div>
-                            <p></p>
+                            <p>Оставьте свои контактные данные или напишите мне в WhatsApp и в ближайшее время я свяжусь с вами и отвечу на них.</p>
                             <p>
                                 <span>Ваша заявка успешно отправлена.</span>
                                 <span>В ближайшее время с Вами свяжется наш специалист и ответит на все интересующие Вас вопросы.</span>
@@ -44,19 +42,19 @@
                                                 </span>
                                             </label>
                                         </div>
-                                        <div class="required phone">
+                                        <div class="required email">
                                             <label class="required">
-                                                <input class="field" type="tel" name="QUEST[PHONE]" value="" data-check="phone" data-form="feedback" autocomplete="off">
-                                                <span>
-                                                    <span>Телефон</span>
-                                                </span>
-                                            </label>
-                                        </div>
-                                        <div class="email">
-                                            <label>
                                                 <input class="field" type="text" name="QUEST[EMAIL]" value="" data-check="email" data-form="feedback" autocomplete="off">
                                                 <span>
                                                     <span>E-mail</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="phone">
+                                            <label>
+                                                <input class="field" type="tel" name="QUEST[PHONE]" value="" data-check="phone" data-form="feedback" autocomplete="off">
+                                                <span>
+                                                    <span>Телефон</span>
                                                 </span>
                                             </label>
                                         </div>
@@ -70,18 +68,17 @@
                                                 </span>
                                             </label>
                                         </div>
-                                        <ol>
-                                            <li>
-                                                <div>
-                                                    <button type="button" aria-label="Отправить" class="button hover text feedback" style="background-color: rgba(240, 145, 30, 1);">
-                                                        <span></span>
-                                                        <span>Отправить</span>
-                                                    </button>
-                                                </div>
-                                                <p>Нажимая кнопку <strong>Отправить</strong> вы даете согласие на обработку персональных данных в соответсвии с <a href="/policy/" title="политика конфиденциальности" style="color: rgba(240, 145, 30, 1);">политикой конфиденциальности</a></p>
-                                                <!--p>Нажимая кнопку <strong>Отправить</strong>, вы даете <a href="#" title="согласие на обработку персональных данных">согласие на обработку персональных данных</a></p-->
-                                            </li>
-                                        </ol>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <button type="button" aria-label="Отправить" class="button hover text feedback" style="background-color: rgba(240, 145, 30, 1);">
+                                            <span></span>
+                                            <span>Отправить</span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <p>Нажимая кнопку <strong>Отправить</strong> вы даете согласие на обработку персональных данных в соответсвии с <a href="/policy/" title="политика конфиденциальности" style="color: rgba(240, 145, 30, 1);">политикой конфиденциальности</a></p>
                                     </li>
                                 </ul>
                             </form>

@@ -1,71 +1,73 @@
-
-
 @charset "UTF-8";
 
 .form.callback {
-  height: 100%;
-  width: 40rem;
-  min-width: 40rem;
-  max-width: 40rem;
-  padding: 0 3rem;
-  margin: 0 auto;
+    height: 100%;
+    width: 40rem;
+    min-width: 40rem;
+    max-width: 40rem;
+    padding: 0 3rem;
+    margin: 0 auto;
 }
 
 .form.callback > div {
-  padding-top: clamp(5rem, 7.5vw, 13rem);
-  padding-bottom: clamp(5rem, 7.5vw, 13rem);
+    padding-top: clamp(5rem, 7.5vw, 13rem);
+    padding-bottom: clamp(5rem, 7.5vw, 13rem);
 }
 
 .form.callback > div > span {
-  line-height: clamp(3.5rem, 4.875vw, 6.25rem);
-  margin-top: clamp(-.75rem, -.75vw, -.75rem);
+    line-height: clamp(3.5rem, 4.875vw, 6.25rem);
+    margin-top: clamp(-.75rem, -.75vw, -.75rem);
 }
 
 .form.feedback > span {
-  display: block;
-  font-weight: 500;
-  font-size: clamp(3.5rem, 4.875vw, 6.25rem);
-  margin-top: clamp(-1.5rem, -1.5vw, -1.5rem);
-  padding-bottom: clamp(4rem, 7vw, 10rem);
+    display: block;
+    font-size: clamp(3.5rem, 5.5vw, 7.5rem);
+    font-family: "accent", sans-serif;
 }
 
 .form.feedback:not(.success) > span::after {
-  content: "Запрос"
+    content: "Запрос"
 }
 
 .form.feedback.success > span::after {
-  content: "Спасибо!"
+    content: "Спасибо!"
 }
 
 .form.feedback > div > form > ul,
 .form,
 .form > div,
 .form > div > span {
-  position: relative;
+    position: relative;
 }
 
 .form > div > button,
 .form > div > ul {
-  margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 .form > div > span {
-  padding: 0 0 3rem 0;
-  font-weight: 500;
-  white-space: nowrap;
-  font-size: 3rem;
+    padding: 0 0 3rem 0;
+    font-weight: 500;
+    white-space: nowrap;
+    font-size: 3rem;
 }
 
 .form > div > p > span {
-  display: block;
+    display: block;
 }
 
 .form > div > p > span:first-child {
-  font-weight: 600;
+    font-weight: 600;
 }
 
 .form > div > p > span:first-child + span {
-  margin: 2rem 0 0 0;
+    margin: 2rem 0 0 0;
+}
+
+.form > div > p {
+    font-size: clamp(2.5rem, 2.75vw, 3rem);
+    font-family: "accent", sans-serif;
+    line-height: 1.1;
 }
 
 .form.success > div > button,
@@ -75,7 +77,7 @@
 .form.success > div > p,
 .form:not(.success) > div > span + span,
 .form:not(.success) > div > p + p {
-  display: none;
+    display: none;
 }
 
 .form:not(.success) > div > form,
@@ -83,375 +85,302 @@
 .form:not(.success) > div > p,
 .form.success > div > span + span,
 .form.success > div > p + p {
-  display: block;
+    display: block;
 }
 
 form,
 form > ul,
-form > ol,
-form > ul > li > div,
-form > ol > li > div {
-  position: relative;
+form > ul > li > div {
+    position: relative;
 }
 
-.form.feedback > div > form > ul > li > ol,
 form > ul,
-form > ol,
 form > ul > li > div > ol {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0;
-  margin: 0;
-  list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: calc(100% + 4rem);
+    left: -2rem;
+    position: relative;
 }
 
-.form:not(.feedback) > div > form > ul > li,
-form > ul > li > div > ol > li,
-form > ol > li {
-  width: 100%;
+.form:not(.feedback) > div > form > ul > li {
+    width: 100%;
 }
 
-form > ul > li > div > ol > li,
-form > ul > li,
-form > ol > li {
-  margin: inherit;
-  background-color: inherit;
-  width: 100%;
+form > ul > li {
+    margin: inherit;
+    background-color: inherit;
+    width: 100%;
+}
+
+.form.feedback > div > form > ul:last-child > li {
+    margin-top: 5rem;
+}
+
+.form.feedback > div > form > ul:last-child > li:first-child {
+    display: flex;
+}
+
+.form.feedback > div > form > ul:last-child > li:last-child > p {
+    margin: 0;
+    padding: 0;
 }
 
 .form:not(.feedback) > div > form > ul > li:last-child {
-  margin-bottom: 5rem;
+    margin-bottom: 5rem;
 }
 
 .form.feedback > div > form > ul > li {
-  margin-left: 2rem;
-  margin-right: 2rem;
-}
-
-.form.feedback > div > form > ul > li > ol,
-form > ul > li > div {
-  margin-top: 5rem;
-}
-
-.form.feedback > div > form > ul > li > ol > li {
-  display: flex;
-}
-
-form > ol > li > div {
-  margin-bottom: 2rem;
-}
-
-.form.feedback > div > form > ul > li > ol > li > p > a,
-form > ol > li > p > a {
-  display: inline !important;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
 form > ul > li > div {
-  display: flex;
-  min-height: 6rem;
+    margin-top: 5rem;
+}
+
+form > ul > li > div {
+    display: flex;
+    min-height: 6rem;
 }
 
 form > ul > li > div > label {
-  display: block;
-  width: 100%;
+    display: block;
+    width: 100%;
 }
 
 form > ul > li > div > label > textarea,
 form > ul > li > div > label > input[type=text],
 form > ul > li > div > label > input[type=email],
 form > ul > li > div > label > input[type=tel] {
-  display: block;
-  position: relative;
-  z-index: 6;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0);
-  color: rgba(50, 50, 50, 1);
-  padding: 0 2rem;
-  border: solid .125rem rgba(180, 180, 180, 1);
-  border-radius: .5rem;
-  font-family: "content", sans-serif;
-  line-height: 3rem;
-  transition: all .25s linear;
+    display: block;
+    position: relative;
+    z-index: 6;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    color: rgba(50, 50, 50, 1);
+    padding: 0 2rem;
+    border: solid .125rem rgba(180, 180, 180, 1);
+    border-radius: .5rem;
+    font-family: "content", sans-serif;
+    line-height: 3rem;
+    transition: all .25s linear;
 }
 
 form > ul > li > div > label > textarea {
-  padding-top: calc(1.5rem - 1px);
-  padding-bottom: calc(1.5rem - 1px);
-  min-height: 17rem;
-  resize: vertical;
+    padding-top: calc(1.5rem - 1px);
+    padding-bottom: calc(1.5rem - 1px);
+    resize: vertical;
 }
 
 form > ul > li > div > label > textarea + span,
 form > ul > li > div > label > input[type=text] + span,
 form > ul > li > div > label > input[type=email] + span,
 form > ul > li > div > label > input[type=tel] + span {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  bottom: calc(100% + 1rem);
-  left: 0;
-  z-index: 5;
-  height: 3rem;
-  padding: 0 .25rem;
-  white-space: nowrap;
-  transition: top .25s linear;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: calc(100% + 1rem);
+    left: 0;
+    z-index: 5;
+    height: 3rem;
+    padding: 0 .25rem;
+    white-space: nowrap;
+    transition: top .25s linear;
 }
 
 form > ul > li > div > label > textarea + span::before,
 form > ul > li > div > label > input[type=text] + span::before,
 form > ul > li > div > label > input[type=email] + span::before,
 form > ul > li > div > label > input[type=tel] + span::before {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-  width: 100%;
-  height: 50%;
-  content: "";
-  background-color: #FFF;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 50%;
+    content: "";
+    background-color: #FFF;
 }
 
 form > ul > li > div > label > textarea + span > span,
 form > ul > li > div > label > input[type=text] + span > span,
 form > ul > li > div > label > input[type=email] + span > span,
 form > ul > li > div > label > input[type=tel] + span > span {
-  position: relative;
-  z-index: 2;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  display: block;
-  overflow: hidden;
-  line-height: 3rem;
-  /* color: #A2A5AA; */
-  transition: font .25s linear;
-  font-size: 1.75rem;
-  font-weight: 400;
-  color: rgba(50, 50, 50, 1);
+    position: relative;
+    z-index: 2;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+    overflow: hidden;
+    line-height: 3rem;
+    /* color: #A2A5AA; */
+    transition: font .25s linear;
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: rgba(50, 50, 50, 1);
 }
 
 form > ul > li > div > label > textarea:focus,
 form > ul > li > div > label > input:focus {
-  border: solid .125rem rgba(50, 50, 50, 1);
+    border: solid .125rem rgba(50, 50, 50, 1);
 }
 
 form > ul > li > div > label > input.field.error {
-  border: solid .125rem rgba(240, 145, 30, 1);
+    border: solid .125rem #BA0C2F;
 }
 
 form > ul > li > div.required > label.required > span > span::after {
-  content: " *";
+    content: " *";
 }
 
 form > ul > li > div > label > input.field.error + span > span {
-  color: rgba(240, 145, 30, 1);
+    color: #BA0C2F;
 }
 
 form > ul > li > div.required > label.required > input.field.error + span > span::after {
-  content: " — обязательное поле";
+    content: " — обязательное поле";
 }
 
 form > ul > li > div > label > textarea,
 form > ul > li > div > label > input[type=text],
 form > ul > li > div > label > input[type=email],
 form > ul > li > div > label > input[type=tel] {
-  font-size: 2rem;
-}
-
-.form.feedback > div > form > ul > li > ol > li > p,
-form > ol > li > p {
-  padding: 0;
-  margin: 0;
-  font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 @keyframes shake {
 
-  from,
-  to {
-    transform: translate3d(0, 0, 0);
-  }
+    from,
+    to {
+        transform: translate3d(0, 0, 0);
+    }
 
-  10%,
-  30%,
-  50%,
-  70%,
-  90% {
-    transform: translate3d(-.15rem, 0, 0);
-  }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translate3d(-.15rem, 0, 0);
+    }
 
-  20%,
-  40%,
-  60%,
-  80% {
-    transform: translate3d(.15rem, 0, 0);
-  }
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translate3d(.15rem, 0, 0);
+    }
 }
 
 .shake {
-  animation-duration: .75s;
-  animation-fill-mode: both;
-  animation-name: shake;
+    animation-duration: .75s;
+    animation-fill-mode: both;
+    animation-name: shake;
 }
-
-/* checkbox — начало */
-
-form > ul > li > div > ol {
-  width: 100%;
-}
-
-form > ul > li > div > ol > li > span {
-  font-weight: 600;
-  line-height: 3rem;
-}
-
-form > ul > li > div > ol > li > .checkbox {
-  position: relative;
-  display: flex;
-  align-items: center;
-  height: 3rem;
-  margin-top: 1rem;
-}
-
-form > ul > li > div > ol > li > .checkbox > input[type="checkbox"] {
-  display: none;
-}
-
-form > ul > li > div > ol > li > .checkbox > input[type="checkbox"] + span {
-  padding-left: 4rem;
-  cursor: pointer;
-  transition: color .25s linear;
-}
-
-form > ul > li > div > ol > li > .checkbox > input[type="checkbox"] + span:hover,
-form > ul > li > div > ol > li > .checkbox > input[type="checkbox"] + .checked {
-  color: #000;
-}
-
-form > ul > li > div > ol > li > .checkbox > input[type="checkbox"] + span::after,
-form > ul > li > div > ol > li > .checkbox > input[type="checkbox"] + span::before {
-  display: block;
-  position: absolute;
-  top: .25rem;
-  left: 0;
-  z-index: 1;
-  content: "";
-}
-
-form > ul > li > div > ol > li > .checkbox > input[type="checkbox"] + span::before {
-  border: solid .125rem #A2A5AA;
-  background-color: #FFF;
-  border-radius: .375rem;
-  transition: all .25s linear;
-  width: calc(2.5rem - .25rem);
-  height: calc(2.5rem - .25rem);
-}
-
-form > ul > li > div > ol > li > .checkbox > input[type="checkbox"] + .checked::before {
-  border: solid .125rem #BA0C2F;
-  background-color: #BA0C2F;
-}
-
-form > ul > li > div > ol > li > .checkbox > input[type="checkbox"] + span::after {
-  background-repeat: no-repeat;
-  background-size: 14px 10px;
-  background-position: 50% 50%;
-  background-image: url(/resources/templates/tarantul/img/check.svg);
-  width: 2.5rem;
-  height: 2.5rem;
-}
-
-/* checkbox — конец */
 
 @media (min-width : 1441px) {
-  .form.feedback > div > form > ul {
-    left: -2rem;
-    width: calc(100% + 4rem);
-  }
+    .form.feedback > div > form > ul {
+        left: -2rem;
+        width: calc(100% + 4rem);
+    }
 
-  .form.feedback > div > form > ul > li {
-    width: calc(50% - 4rem);
-  }
-
-  .form.feedback > div > form > ul > li > ol > li > div {
-    width: 20rem;
-    margin-right: 2rem;
-  }
+    .form.feedback > div > form > ul > li {
+        width: calc(50% - 4rem);
+    }
+    
+    form > ul > li > div > label > textarea {
+    min-height: 28rem;
+}
+    
+    .form.feedback > div > form > ul:last-child > li:first-child {
+    flex-direction: row-reverse;
+}
 }
 
 @media (min-width : 1201px) and (max-width : 1440px) {
-  .form.feedback > div > form > ul {
-    left: -2rem;
-    width: calc(100% + 4rem);
-  }
+    .form.feedback > div > form > ul {
+        left: -2rem;
+        width: calc(100% + 4rem);
+    }
 
-  .form.feedback > div > form > ul > li {
-    width: calc(50% - 4rem);
-  }
-
-  .form.feedback > div > form > ul > li > ol > li > div {
-    width: 20rem;
-    margin-right: 2rem;
-  }
+    .form.feedback > div > form > ul > li {
+        width: calc(50% - 4rem);
+    }
+    
+    form > ul > li > div > label > textarea {
+    min-height: 28rem;
+}
+    
+    .form.feedback > div > form > ul:last-child > li:first-child {
+    flex-direction: row-reverse;
+}
 }
 
 @media (min-width : 961px) and (max-width : 1200px) {
-  .form.feedback > div > form > ul {
-    left: -2rem;
-    width: calc(100% + 4rem);
-  }
+    .form.feedback > div > form > ul {
+        left: -2rem;
+        width: calc(100% + 4rem);
+    }
 
-  .form.feedback > div > form > ul > li {
-    width: calc(50% - 4rem);
-  }
-
-  .form.feedback > div > form > ul > li > ol > li > div {
-    width: 20rem;
-    margin-right: 2rem;
-  }
+    .form.feedback > div > form > ul > li {
+        width: calc(50% - 4rem);
+    }
+    
+    form > ul > li > div > label > textarea {
+    min-height: 28rem;
+}
+    
+    .form.feedback > div > form > ul:last-child > li:first-child {
+    flex-direction: row-reverse;
+}
 }
 
 @media (min-width : 721px) and (max-width : 960px) {
-  .form.feedback > div > form > ul > li {
-    width: calc(50% - 4rem);
-  }
+    .form.feedback > div > form > ul > li {
+        width: calc(50% - 4rem);
+    }
 
-  .form.feedback > div > form > ul > li > ol > li {
-    flex-wrap: wrap;
-  }
-
-  .form.feedback > div > form > ul > li > ol > li > div {
-    width: 100%;
-    margin-bottom: 2rem;
-  }
+    .form.feedback > div > form > ul > li > ol > li {
+        flex-wrap: wrap;
+    }
+    
+    form > ul > li > div > label > textarea {
+    min-height: 28rem;
+}
+    
+    .form.feedback > div > form > ul:last-child > li:first-child {
+    flex-direction: row-reverse;
+}
 }
 
 @media (min-width : 481px) and (max-width : 720px) {
-  .form.feedback > div > form > ul > li {
-    width: calc(50% - 4rem);
-  }
-
-  .form.feedback > div > form > ul > li > ol > li {
-    flex-wrap: wrap;
-  }
-
-  .form.feedback > div > form > ul > li > ol > li > div {
-    width: 100%;
-    margin-bottom: 2rem;
-  }
+    .form.feedback > div > form > ul > li {
+        width: calc(50% - 4rem);
+    }
+    
+    form > ul > li > div > label > textarea {
+    min-height: 28rem;
+}
+    
+    .form.feedback > div > form > ul:last-child > li:first-child {
+    flex-direction: row-reverse;
+}
 }
 
 @media (max-width : 480px) {
-  .form.feedback > div > form > ul > li {
-    width: calc(100% - 4rem);
-  }
-
-  .form.feedback > div > form > ul > li > ol > li {
-    flex-wrap: wrap;
-  }
-
-  .form.feedback > div > form > ul > li > ol > li > div {
-    width: 100%;
-    margin-bottom: 2rem;
-  }
+    .form.feedback > div > form > ul > li {
+        width: calc(100% - 4rem);
+    }
+    
+    form > ul > li > div > label > textarea {
+    min-height: 17rem;
+}
+    
+    .form.feedback > div > form > ul:last-child > li:first-child {
+    flex-direction: row;
+}
 }

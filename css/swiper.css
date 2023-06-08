@@ -18,6 +18,7 @@
   height: 100%;
 }
 
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center,
 .swiper-pagination,
 .swiper-button,
 .swiper-container > .swiper > .swiper-wrapper {
@@ -26,63 +27,120 @@
 
 .swiper-container > .swiper > .swiper-wrapper > .swiper-slide {
   flex-shrink: 0;
-  background-color: rgba(0, 0, 0, .4);
 }
 
-/* .swiper-container > .swiper > .swiper-wrapper > .swiper-slide > div:not(.center.content) */
-.swiper-container > .swiper > .swiper-wrapper > .swiper-slide {
-  /* width: 100%;
-  height: 100%; */
+article > .swiper-container > .swiper > .swiper-wrapper > .swiper-slide {
+  background-color: rgba(0, 0, 0, .5);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-blend-mode: color, darken;
-  padding: 10rem 0;
+  padding: clamp(10rem, 14vw, 18rem) 0;
+}
+
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide:not(.swiper-slide-active) {
+  z-index: 1;
+}
+
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide.swiper-slide-active {
+  z-index: 2;
 }
 
 .swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center {
-  display: flex;
-  align-items: flex-end;
   height: 100%;
   overflow: hidden;
-  /* text-shadow: #5f5f5f 1px 0 10px; */
 }
 
-.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image {
+/* изображение — сверху, текст — снизу */
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center:not(.overlap) {
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* текст перекрывает изображение */
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center.overlap {
+  align-items: flex-end;
+}
+
+/* изображение — сверху, текст — снизу */
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center:not(.overlap) > .image {
+  width: 100%;
+  flex-grow: 1;
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+  background-size: contain;
+  max-height: 80rem;
+  margin-bottom: 3rem;
+}
+
+/* текст перекрывает изображение */
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center.overlap > .image {
   width: clamp(40rem, 50vw, 60rem);
   height: clamp(40rem, 50vw, 60rem);
-  background-color: rgba(0, 0, 0, .75);
-  /* margin-top: 10rem; */
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
   position: absolute;
   top: 0;
   right: 3rem;
-  /* margin-left: 3rem;
-  margin-right: 3rem; */
   z-index: 1;
-  max-width: 105rem;
-  max-height: 105rem;
+  max-width: 80rem;
+  max-height: 80rem;
+  opacity: .75;
 }
 
 .swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image + div {
   font-size: clamp(2.5rem, 2.75vw, 3rem);
-  /* padding: 10rem 0; */
   z-index: 2;
   text-shadow: .125rem .125rem .25rem rgba(0, 0, 0, .25);
+  line-height: 1.1;
 }
 
 .swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image + div > .heading {
   font-size: clamp(3.5rem, 5.5vw, 7.5rem);
-  font-weight: 700;
+  font-family: "accent", sans-serif;
   margin-bottom: clamp(2rem, 3vw, 4rem);
 }
 
-.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image + div > p {
-  /* font-size: clamp(2.5rem, 2.75vw, 3rem);
-  font-weight: 400; */
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image + div > a {
+  display: inline-flex;
+  /* margin: 0 0 1rem 0; */
+}
+
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image + div > a > span {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+}
+
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image + div > a > span:first-child {
+  text-decoration: underline;
+}
+
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image + div > a,
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image + div > a:hover > span:first-child {
+  text-decoration: none;
+}
+
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image + div > a > span + span {
+  width: 4rem;
+  overflow: hidden;
+  margin-left: 2rem;
+  padding-top: 1rem;
+  justify-content: flex-end;
+  transition: width .25s ease-in-out;
+}
+
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image + div > a:hover > span + span {
+  width: 6rem;
+}
+
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image + div > a > span + span > span {
+  width: 8rem;
 }
 
 .swiper-button.swiper-button-disabled {
-  opacity: .5;
+  opacity: .25;
 }
 
 .swiper-button {
@@ -98,36 +156,57 @@
 }
 
 .swiper-pagination {
-  /* position: relative; */
   z-index: 1;
   align-items: center;
   left: 0;
-  top: calc(5rem - .5rem);
+  top: calc(50% - .5rem);
   width: 100%;
 }
 
 .swiper-pagination > .swiper-pagination-bullet {
+  display: block;
   width: 100%;
   height: .5rem;
-  /* position: relative; */
   z-index: 10;
-  background-color: #FFFFFF;
-  opacity: .25;
+  background-color: rgba(255, 255, 255, .25);
+  cursor: pointer;
+  box-shadow: .125rem .125rem .25rem rgba(0, 0, 0, .25);
+}
+
+.swiper-pagination > .swiper-pagination-bullet::before {
+  position: absolute;
+  top: calc(50% - 2.5rem);
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 5rem;
+  content: "";
 }
 
 .swiper-pagination > .swiper-pagination-bullet:not(:last-child) {
-  margin: 0 2rem 0 0;
-}
-
-.swiper-pagination > .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  opacity: 1;
-}
-
-.swiper-pagination > .swiper-pagination-bullet {
-  cursor: pointer;
-  transition: transform .25s ease-in-out;
+  margin: 0 1rem 0 0;
 }
 
 .swiper-pointer-events {
   touch-action: pan-y;
+}
+
+.swiper-pagination > .swiper-pagination-bullet > span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  height: 100%;
+  width: 0;
+  background-color: rgba(255, 255, 255, 1);
+  transition: background .25s linear;
+}
+
+.swiper-pagination > .swiper-pagination-bullet.hover:hover > span {
+  background-color: rgba(255, 255, 255, .5);
+}
+
+.circle .swiper-pagination > .swiper-pagination-bullet,
+.circle .swiper-pagination > .swiper-pagination-bullet > span {
+  border-radius: .5rem;
 }
