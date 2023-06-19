@@ -22,10 +22,8 @@
       overflow: hidden;
     }
 
-    .content_font,
     body,
-    label>.field,
-    .button.text>span:last-child {
+    .content_font {
       font-family: "Roboto", serif;
     }
 
@@ -93,7 +91,6 @@
       border-radius: 50%;
       border: .2rem solid transparent;
       border-top-color: #A9A454;
-      -webkit-animation-name: preloader;
       animation-name: preloader;
     }
 
@@ -106,7 +103,6 @@
     }
 
     .preloader>div:not(.logo) {
-      -webkit-animation-duration: 2s;
       animation-duration: 2s;
     }
 
@@ -121,7 +117,6 @@
       left: 2px;
       right: 2px;
       bottom: 2px;
-      -webkit-animation-duration: 3s;
       animation-duration: 3s;
       opacity: .5;
     }
@@ -131,19 +126,16 @@
       left: 6px;
       right: 6px;
       bottom: 6px;
-      -webkit-animation-duration: 1.5s;
       animation-duration: 1.5s;
       opacity: .75;
     }
 
     @keyframes preloader {
       0% {
-        -webkit-transform: rotate(360deg);
         transform: rotate(0deg);
       }
 
       100% {
-        -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
       }
     }
@@ -158,17 +150,14 @@
 
     @keyframes pulse {
       from {
-        -webkit-transform: scale3d(1, 1, 1);
         transform: scale3d(1, 1, 1);
       }
 
       50% {
-        -webkit-transform: scale3d(1.05, 1.05, 1.05);
         transform: scale3d(1.05, 1.05, 1.05);
       }
 
       to {
-        -webkit-transform: scale3d(1, 1, 1);
         transform: scale3d(1, 1, 1);
       }
     }
@@ -176,18 +165,13 @@
     .preloader>div,
     .preloader>div:before,
     .preloader>div:after {
-      -webkit-animation-timing-function: linear;
       animation-timing-function: linear;
-      -webkit-animation-iteration-count: infinite;
       animation-iteration-count: infinite;
-      -webkit-animation-fill-mode: both;
       animation-fill-mode: both;
     }
 
     .preloader>.logo {
-      -webkit-animation-name: pulse;
       animation-name: pulse;
-      -webkit-animation-duration: 1.5s;
       animation-duration: 1.5s;
     }
 
@@ -303,7 +287,7 @@
           </div>
         </div>
       </header>
-      <article class="content_font">
+      <article>
         <div class="swiper-container">
           <div class="swiper">
             <div class="swiper-wrapper">
@@ -322,7 +306,7 @@
                       <path d="M54.448 109.214C55.9487 108.213 58.7833 106.879 61.2844 105.712C64.786 104.211 67.1204 100.71 67.1204 96.8746V91.7057L60.6174 91.3722V96.7079C60.6174 101.543 56.9491 105.879 52.1136 106.379C50.9465 106.546 49.6125 106.546 48.1118 106.379C36.7734 105.545 36.7734 112.882 36.7734 112.882C36.7734 112.882 39.608 107.546 45.9442 108.547C40.4417 110.714 39.608 115.216 41.1087 118.718C41.7757 114.049 43.1096 111.881 47.4449 111.381C45.2772 114.716 45.1105 119.218 46.6112 121.052C45.9442 114.883 52.4471 110.881 52.4471 110.881C52.4471 110.881 55.115 113.215 54.1145 117.717C56.6157 115.883 56.1154 111.214 54.448 109.214ZM64.9527 93.3731C64.9527 93.2063 64.9527 93.2063 65.1195 93.2063C65.2862 93.2063 65.2862 93.2063 65.2862 93.3731V99.209C65.2862 99.3758 65.2862 99.3758 65.1195 99.3758C64.9527 99.3758 64.9527 99.3758 64.9527 99.209V93.3731Z" fill="#A9A454"></path>
                     </svg-->
                   </div>
-                  <div class="prologue content_color">
+                  <div class="prologue content_color content_font">
                     <h1 class="accent_font heading">ТАНТРА-БАНЯ</h1>
                     <p>Приглашаю мужчин и пары из Москвы и МО на банную программу для отдыха и наслаждения, включающую в себя нежные парения в бане и авторский чувственный массаж</p>
                     <span class="more hover action accent_color" data-action="iframe" data-iframe="about.html">
@@ -341,7 +325,7 @@
               <div class="swiper-slide swiper-no-swiping" data-bg="img/bg.2.jpg?31052023">
                 <div class="center">
                   <div class="image"></div>
-                  <div class="prologue content_color">
+                  <div class="prologue content_color content_font">
                     <h2 class="accent_font heading">Истинное наслаждение</h2>
                     <p>Проходя через банную релаксацию и чувственный массаж, вы получаете истинное наслаждение — телесное, душевное, эмоциональное</p>
                     <span class="more hover action accent_color" data-action="iframe" data-iframe="1-1.html">
@@ -360,7 +344,7 @@
               <div class="swiper-slide swiper-no-swiping" data-bg="img/bg.3.jpg?31052023">
                 <div class="center">
                   <div class="image"></div>
-                  <div class="prologue content_color">
+                  <div class="prologue content_color content_font">
                     <h2 class="accent_font heading">Откровенная чувственность</h2>
                     <p>На протяжении моей программы вы плавно погружаетесь в мир откровенной чувственности и сексуальности, женской близости и беспредельной нежности, открывая всё это для себя</p>
                     <span class="more hover action accent_color" data-action="iframe" data-iframe="1-2.html">
@@ -379,7 +363,7 @@
               <div class="swiper-slide swiper-no-swiping" data-bg="img/bg.4.jpg?31052023">
                 <div class="center">
                   <div class="image"></div>
-                  <div class="prologue content_color">
+                  <div class="prologue content_color content_font">
                     <h3 class="accent_font heading">Желанные эмоции и ощущения</h3>
                     <p>Я искренне вовлекаюсь в процесс и тонко чувствую вас и ваше тело — это позволяет почти слиться с вами и дать вам именно те эмоции и ощущения, которые вы хотите испытать</p>
                   </div>
@@ -388,7 +372,7 @@
               <div class="swiper-slide swiper-no-swiping" data-bg="img/bg.5.jpg?31052023">
                 <div class="center">
                   <div class="image"></div>
-                  <div class="prologue content_color">
+                  <div class="prologue content_color content_font">
                     <h3 class="accent_font heading">Профессионализм и деликатность</h3>
                     <p>Полностью отдаваясь процессу, я даю вам всё самое лучшее из мира телесности и чувственности — делаю это мягко и деликатно</p>
                   </div>
@@ -397,7 +381,7 @@
               <div class="swiper-slide swiper-no-swiping" data-bg="img/bg.7.jpg?31052023">
                 <div class="center">
                   <div class="image"></div>
-                  <div class="prologue content_color">
+                  <div class="prologue content_color content_font">
                     <h3 class="accent_font heading">Отдых и перезагрузка</h3>
                     <p>Пройдя через мою программу, вы полностью перезагружаетесь и будто заново рождаетесь — появляется желание жить, а я словно муза, дающая вам вдохновение!</p>
                     <span class="more hover action accent_color" data-action="iframe" data-iframe="1-3.html">
@@ -443,7 +427,7 @@
           </div>
           <button class="button hover text action accent_bg_color" type="button" aria-label="Оставить заявку" data-action="iframe" data-iframe="form.html">
             <span></span>
-            <span class="content_color">Оставить заявку</span>
+            <span class="content_color content_font">Оставить заявку</span>
           </button>
         </div>
       </footer>
