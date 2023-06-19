@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- meta name="author" content="tarantul web development zone | www.tarantul.zone" / -->
+  <meta name="description" content="я — мастерица в доставлении телесного удовольствия, в этом заключается мой талант, которому я посвящаю всё своё время">
+  <link rel="canonical" href="">
+  <!--link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet"-->
+
+  <link href="fonts/Roboto/Slab/Bold/style.css" rel="stylesheet">
+  <link href="fonts/Roboto/Classic/Regular/style.css" rel="stylesheet">
+
+  <style>
+    body,
+    .preloader {
+      overflow: hidden;
+    }
+
+    .content_font,
+    body,
+    label>.field,
+    .button.text>span:last-child {
+      font-family: "Roboto", sans-serif;
+    }
+
+    strong,
+    .accent_font {
+      font-family: "Roboto Slab", serif;
+    }
+
+    a,
+    .accent_color {
+      color: #A9A454;
+    }
+
+    .accent_bg_color {
+      background-color: #A9A454;
+    }
+
+    .accent_border {
+      border: solid 1px #A9A454;
+    }
+
+    .accent_fill svg g,
+    .accent_fill svg path {
+      fill: #A9A454 !important;
+    }
+
+    .content_color {
+      color: #EFE4D4;
+    }
+
+    .content_bg_color {
+      background-color: #EFE4D4;
+    }
+
+    .content_fill svg g,
+    .content_fill svg path {
+      fill: #EFE4D4 !important;
+    }
+
+    .preloader {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(24px, 7.5vw, 96px);
+      background-color: #FFF;
+    }
+
+    .preloader.opened {
+      display: flex;
+      transform: translate(0, 0);
+    }
+
+    .preloader:not(.opened) {
+      display: none;
+      transform: translate(0, -100%);
+    }
+
+    .preloader>div {
+      position: relative;
+    }
+
+    .preloader>div:not(.logo),
+    .preloader>div:not(.logo):before,
+    .preloader>div:not(.logo):after {
+      border-radius: 50%;
+      border: .2rem solid transparent;
+      border-top-color: #A9A454;
+      -webkit-animation-name: preloader;
+      animation-name: preloader;
+    }
+
+    .preloader>div,
+    .preloader>.logo svg {
+      width: 100%;
+      height: 100%;
+      max-width: 240px;
+      max-height: 240px;
+    }
+
+    .preloader>div:not(.logo) {
+      -webkit-animation-duration: 2s;
+      animation-duration: 2s;
+    }
+
+    .preloader>div:not(.logo):before,
+    .preloader>div:not(.logo):after {
+      content: "";
+      position: absolute;
+    }
+
+    .preloader>div:not(.logo):before {
+      top: 2px;
+      left: 2px;
+      right: 2px;
+      bottom: 2px;
+      -webkit-animation-duration: 3s;
+      animation-duration: 3s;
+      opacity: .5;
+    }
+
+    .preloader>div:not(.logo):after {
+      top: 6px;
+      left: 6px;
+      right: 6px;
+      bottom: 6px;
+      -webkit-animation-duration: 1.5s;
+      animation-duration: 1.5s;
+      opacity: .75;
+    }
+
+    @keyframes preloader {
+      0% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    .preloader.opened+.wrapper {
+      opacity: 0;
+    }
+
+    .preloader.opened {
+      opacity: 1;
+    }
+
+    @keyframes pulse {
+      from {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+      }
+
+      50% {
+        -webkit-transform: scale3d(1.05, 1.05, 1.05);
+        transform: scale3d(1.05, 1.05, 1.05);
+      }
+
+      to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+      }
+    }
+
+    .preloader>div,
+    .preloader>div:before,
+    .preloader>div:after {
+      -webkit-animation-timing-function: linear;
+      animation-timing-function: linear;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+    }
+
+    .preloader>.logo {
+      -webkit-animation-name: pulse;
+      animation-name: pulse;
+      -webkit-animation-duration: 1.5s;
+      animation-duration: 1.5s;
+    }
+
+  </style>
+
+  <!--script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script-->
+  <script defer src="js/jquery.min.js"></script>
+  <script defer src="js/template.js"></script>
+  <script>
+    function loadCSS(source) {
+      "use strict";
+      let s = document.getElementsByTagName("head")[0];
+      let sc = document.createElement("link");
+      sc.rel = "stylesheet";
+      sc.href = source;
+      s.appendChild(sc);
+      return false;
+    }
+
+    let jsonCSS = JSON.parse('[{"source":"css/reset.css"},{"source":"css/style.css"},{"source":"css/vh.css"}]');
+    jsonCSS.forEach(function(e, i) {
+      setTimeout(function() {
+        loadCSS(jsonCSS[i].source + "?" + $.now());
+      }, 250);
+    });
+
+  </script>
+  <title>«ТАНТРА-БАНЯ» — политика конфиденциальности</title>
+</head>
+
+<body class="circle">
+  <div class="preloader opened">
+    <div></div>
+  </div>
+  <div class="wrapper">
+    <div class="workspace">
+      <article class="content_font">
+        <div class="section">
+          <div class="center">
+            <h1 class="heading accent_font">Политика конфиденциальности</h1>
+            <div class="content">
+              <p>Соблюдение Вашей конфиденциальности важно для нас. По этой причине, мы разработали Политику Конфиденциальности, которая описывает, как мы используем и храним Вашу информацию. Пожалуйста, ознакомьтесь с нашими правилами соблюдения конфиденциальности и сообщите нам, если у вас возникнут какие-либо вопросы.</p>
+              <p>
+                <strong>Сбор и использование персональной информации</strong>
+              </p>
+              <p>Под персональной информацией понимаются данные, которые могут быть использованы для идентификации определенного лица либо связи с ним. От вас может быть запрошено предоставление вашей персональной информации в любой момент, когда вы связываетесь с нами. Ниже приведены некоторые примеры типов персональной информации, которую мы можем собирать, и как мы можем использовать такую информацию.</p>
+              <p>Какую персональную информацию мы собираем:</p>
+              <ul>
+                <li>Когда вы оставляете заявку на сайте, мы можем собирать различную информацию, включая ваши имя, номер телефона, адрес электронной почты и т.д.</li>
+              </ul>
+              <p>Как мы используем вашу персональную информацию:</p>
+              <ul>
+                <li>Собираемая нами персональная информация позволяет нам связываться с вами и сообщать об уникальных предложениях, акциях и других мероприятиях и ближайших событиях.</li>
+                <li>Время от времени, мы можем использовать вашу персональную информацию для отправки важных уведомлений и сообщений.</li>
+                <li>Мы также можем использовать персональную информацию для внутренних целей, таких как проведения аудита, анализа данных и различных исследований в целях улучшения услуг предоставляемых нами и предоставления Вам рекомендаций относительно наших услуг.</li>
+                <li>Если вы принимаете участие в розыгрыше призов, конкурсе или сходном стимулирующем мероприятии, мы можем использовать предоставляемую вами информацию для управления такими программами.</li>
+              </ul>
+              <p>
+                <strong>Раскрытие информации третьим лицам</strong>
+              </p>
+              <p>Мы не раскрываем полученную от Вас информацию третьим лицам, исключения:</p>
+              <ul>
+                <li>В случае если необходимо — в соответствии с законом, судебным порядком, в судебном разбирательстве, и/или на основании публичных запросов или запросов от государственныхорганов на территории РФ — раскрыть вашу персональную информацию. Мы также можемраскрывать информацию о вас, если мы определим, что такое раскрытие необходимо илиуместно в целях безопасности, поддержания правопорядка, или иных общественно важныхслучаях.</li>
+                <li>В случае реорганизации, слияния или продажи мы можем передать собираемую нами персональную информацию соответствующему третьему лицу – правопреемнику.</li>
+              </ul>
+              <p>
+                <strong>Защита персональной информации</strong>
+              </p>
+              <p>Мы предпринимаем меры предосторожности — включая административные, технические и физические — для защиты вашей персональной информации от утраты, кражи, и недобросовестного использования, а также от несанкционированного доступа, раскрытия, изменения и уничтожения.
+              </p>
+              <p>
+                <strong>Соблюдение вашей конфиденциальности на уровне компании</strong>
+              </p>
+              <p>Для того чтобы убедиться, что ваша персональная информация находится в безопасности, мы доводим нормы соблюдения конфиденциальности и безопасности до наших сотрудников, и строго следим за исполнением мер соблюдения конфиденциальности.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+  <script>
+    window.onload = function() {
+
+      setTimeout(function() {
+        $(".preloader.opened").animate({
+          opacity: 0
+        }, 500);
+        $(".wrapper").animate({
+          opacity: 1
+        }, 500);
+        setTimeout(function() {
+          $(".preloader.opened").removeClass("opened");
+        }, 500);
+      }, 500);
+
+    }
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- meta name="author" content="tarantul web development zone | www.tarantul.zone" / -->
+  <meta name="description" content="Мы проходим в место с особой атмосферой и я приступаю к тому, в чем заключается мой талант — к погружению вас в мир телесности и чувственности">
+  <link rel="canonical" href="">
+  <!--link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet"-->
+
+  <link href="fonts/Roboto/Slab/Bold/style.css" rel="stylesheet">
+  <link href="fonts/Roboto/Classic/Regular/style.css" rel="stylesheet">
+
+  <style>
+    body,
+    .preloader {
+      overflow: hidden;
+    }
+
+    .content_font,
+    body,
+    label>.field,
+    .button.text>span:last-child {
+      font-family: "Roboto", sans-serif;
+    }
+
+    strong,
+    .accent_font {
+      font-family: "Roboto Slab", serif;
+    }
+
+    a,
+    .accent_color {
+      color: #A9A454;
+    }
+
+    .accent_bg_color {
+      background-color: #A9A454;
+    }
+
+    .accent_border {
+      border: solid 1px #A9A454;
+    }
+
+    .accent_fill svg g,
+    .accent_fill svg path {
+      fill: #A9A454 !important;
+    }
+
+    .content_color {
+      color: #EFE4D4;
+    }
+
+    .content_bg_color {
+      background-color: #EFE4D4;
+    }
+
+    c svg g,
+    .content_fill svg path {
+      fill: #EFE4D4 !important;
+    }
+
+    .preloader {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(24px, 7.5vw, 96px);
+      background-color: #FFF;
+    }
+
+    .preloader.opened {
+      display: flex;
+      transform: translate(0, 0);
+    }
+
+    .preloader:not(.opened) {
+      display: none;
+      transform: translate(0, -100%);
+    }
+
+    .preloader>div {
+      position: relative;
+    }
+
+    .preloader>div:not(.logo),
+    .preloader>div:not(.logo):before,
+    .preloader>div:not(.logo):after {
+      border-radius: 50%;
+      border: .2rem solid transparent;
+      border-top-color: #A9A454;
+      -webkit-animation-name: preloader;
+      animation-name: preloader;
+    }
+
+    .preloader>div,
+    .preloader>.logo svg {
+      width: 100%;
+      height: 100%;
+      max-width: 240px;
+      max-height: 240px;
+    }
+
+    .preloader>div:not(.logo) {
+      -webkit-animation-duration: 2s;
+      animation-duration: 2s;
+    }
+
+    .preloader>div:not(.logo):before,
+    .preloader>div:not(.logo):after {
+      content: "";
+      position: absolute;
+    }
+
+    .preloader>div:not(.logo):before {
+      top: 2px;
+      left: 2px;
+      right: 2px;
+      bottom: 2px;
+      -webkit-animation-duration: 3s;
+      animation-duration: 3s;
+      opacity: .5;
+    }
+
+    .preloader>div:not(.logo):after {
+      top: 6px;
+      left: 6px;
+      right: 6px;
+      bottom: 6px;
+      -webkit-animation-duration: 1.5s;
+      animation-duration: 1.5s;
+      opacity: .75;
+    }
+
+    @keyframes preloader {
+      0% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    .preloader.opened+.wrapper {
+      opacity: 0;
+    }
+
+    .preloader.opened {
+      opacity: 1;
+    }
+
+    @keyframes pulse {
+      from {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+      }
+
+      50% {
+        -webkit-transform: scale3d(1.05, 1.05, 1.05);
+        transform: scale3d(1.05, 1.05, 1.05);
+      }
+
+      to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+      }
+    }
+
+    .preloader>div,
+    .preloader>div:before,
+    .preloader>div:after {
+      -webkit-animation-timing-function: linear;
+      animation-timing-function: linear;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+    }
+
+    .preloader>.logo {
+      -webkit-animation-name: pulse;
+      animation-name: pulse;
+      -webkit-animation-duration: 1.5s;
+      animation-duration: 1.5s;
+    }
+
+  </style>
+
+  <!--script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script-->
+  <script defer src="js/jquery.min.js"></script>
+  <script defer src="js/template.js"></script>
+  <script>
+    function loadJS(source) {
+      "use strict";
+      var s = document.getElementsByTagName("head")[0],
+        sc = document.createElement("script");
+      sc.defer = true;
+      sc.src = source;
+      s.appendChild(sc);
+      return false;
+    }
+
+    function loadCSS(source) {
+      "use strict";
+      let s = document.getElementsByTagName("head")[0];
+      let sc = document.createElement("link");
+      sc.rel = "stylesheet";
+      sc.href = source;
+      s.appendChild(sc);
+      return false;
+    }
+
+    let jsonCSS = JSON.parse('[{"source":"css/reset.css"},{"source":"css/style.css"},{"source":"css/form.css"},{"source":"css/vh.css"},{"source":"css/button.css"}]');
+    jsonCSS.forEach(function(e, i) {
+      setTimeout(function() {
+        loadCSS(jsonCSS[i].source + "?" + $.now());
+      }, 250);
+    });
+
+  </script>
+  <title>«ТАНТРА-БАНЯ» — авторский чувственный массаж, и при желании — проводимый вдвоем с помощницей</title>
+</head>
+
+<body class="circle">
+  <div class="preloader opened">
+    <div></div>
+  </div>
+  <div class="wrapper">
+    <div class="workspace">
+      <article class="content_font">
+        <div class="image" style="background-image:url(img/bg.3.jpg?31052023)"></div>
+        <div class="section">
+          <div class="center">
+
+            <h1 class="heading accent_font">Авторский чувственный массаж, и при желании — проводимый вдвоем с помощницей</h1>
+
+            <div class="content">
+              <p>Мы проходим в место с особой атмосферой и я приступаю к тому, в чем заключается мой талант — к <strong>погружению вас в мир телесности и чувственности</strong>.</p>
+            </div>
+
+            <div class="gallery swiper-container">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="lazy" data-bg="img/bg.4.jpg?31052023"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="lazy" data-bg="img/bg.5.jpg?31052023"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button prev">
+                <button class="button hover icon content_bg_color" type="button" aria-label="Назад">
+                  <span class="accent_fill">
+                    <svg width="18px" height="18px" viewBox="-2 0 19 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M12.5858 15.4142L0 2.82843L2.82843 0L18.2426 15.4142L2.82843 30.8284L0 28L12.5858 15.4142Z"></path>
+                    </svg>
+                  </span>
+                  <span>Назад</span>
+                </button>
+              </div>
+              <div class="swiper-button next">
+                <button class="button hover icon content_bg_color" type="button" aria-label="Вперед">
+                  <span class="accent_fill">
+                    <svg width="18px" height="18px" viewBox="-2 0 19 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M12.5858 15.4142L0 2.82843L2.82843 0L18.2426 15.4142L2.82843 30.8284L0 28L12.5858 15.4142Z"></path>
+                    </svg>
+                  </span>
+                  <span>Вперед</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="content">
+              <p>С помощью своего интуитивного авторского массажа, который может начинаться с силовых движений, плавно перетекая в расслабляющие, а затем в откровенно чувственные, <strong>я погружаю вас в мир телесного удовольствия и новых, удивительных ощущений. В мир познания собственной чувственности и сексуальности</strong>. В самом настоящем, подлинном значении этих слов.</p>
+              <p>Конечная цель моего массажа — <strong>доставить вам максимальное удовольствие через ваше тело, эмоции и чувства</strong>. И с этим я великолепно справляюсь.</p>
+              <p>А если у вас будет желание погрузиться в еще более глубокое состояние удовольствия, <strong>я приглашу свою помощницу для проведения чувственного массажа вдвоем</strong>. Это даст вам совершенно удивительные ощущения другого порядка, испытать которые стоит хоть раз в жизни.</p>
+              <p>Время здесь летит совершенно незаметно, а <strong>чувство реальности полностью вас оставляет</strong>...</p>
+            </div>
+
+          </div>
+        </div>
+        <div class="section">
+          <div class="center">
+            <div class="form feedback">
+              <span class="accent_font heading" data-header="Оставьте заявку"></span>
+            </div>
+          </div>
+          <div class="center">
+            <div class="form feedback">
+              <div>
+                <p>
+                  <span>Оставьте свои контактные данные и в ближайшее время я свяжусь с вами и отвечу на все интересующие вас вопросы.</span>
+                </p>
+                <p>
+                  <span>Ваша заявка успешно отправлена, в ближайшее время я свяжусь с вами и отвечу на все интересующие вас вопросы.</span>
+                </p>
+                <form name="feedback" method="post" action="#" autocomplete="off">
+                  <ul>
+                    <li>
+                      <div class="required name">
+                        <label class="required">
+                          <input class="field" type="text" name="QUEST[NAME]" value="" data-check="name" data-form="feedback" autocomplete="off">
+                          <span>
+                            <span class="small">Имя</span>
+                          </span>
+                        </label>
+                      </div>
+                      <div class="required phonemail">
+                        <label class="required">
+                          <input class="field" type="text" name="QUEST[CONTACT]" value="" data-check="phonemail" data-form="feedback" autocomplete="off">
+                          <span>
+                            <span class="small">Телефон или E-mail</span>
+                          </span>
+                        </label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="message">
+                        <label>
+                          <textarea class="field" name="QUEST[MESSAGE]" data-form="feedback" autocomplete="off"></textarea>
+                          <span>
+                            <span class="small">Текст сообщения</span>
+                          </span>
+                        </label>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <button type="button" aria-label="Отправить" class="button action hover text feedback accent_bg_color">
+                        <span></span>
+                        <span class="content_color">Отправить</span>
+                      </button>
+                    </li>
+                    <li>
+                      <p class="small">Нажимая кнопку «Отправить» вы даете согласие на обработку персональных данных в соответсвии с <a href="policy.html" title="политика конфиденциальности" target="_blank">политикой конфиденциальности</a></p>
+                    </li>
+                  </ul>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+  <script>
+    window.onload = function() {
+
+      if ($(".swiper-container > .swiper > .swiper-wrapper > .swiper-slide").length) {
+        loadCSS("css/swiper.css");
+        loadCSS("css/gallery.swiper.css");
+        loadJS("js/swiper.min.js" + "?" + $.now());
+        let timerSwiper = setInterval(function() {
+          if (typeof Swiper !== "undefined") {
+            loadJS("js/gallery.swiper.js" + "?" + $.now());
+            clearInterval(timerSwiper);
+          }
+        }, 250);
+      }
+
+      if ($(".lazy").length) {
+        loadJS("js/lazyload.min.js" + "?" + $.now());
+        let timerLazy = setInterval(function() {
+          if (typeof LazyLoad !== "undefined") {
+            var myLazyLoad = new LazyLoad({
+              container: document.querySelector("article")
+            });
+            clearInterval(timerLazy);
+          }
+        }, 250);
+      }
+
+      if ($("input[type=tel]").length) {
+        loadJS("js/inputmask.min.js" + "?" + $.now());
+      }
+
+      setTimeout(function() {
+        $(".preloader.opened").animate({
+          opacity: 0
+        }, 500);
+        $(".wrapper").animate({
+          opacity: 1
+        }, 500);
+        setTimeout(function() {
+          $(".preloader.opened").removeClass("opened");
+          loadJS("js/form.js" + "?" + $.now());
+        }, 500);
+      }, 500);
+
+    }
+
+  </script>
+</body>
+
+</html>

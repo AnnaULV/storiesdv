@@ -30,6 +30,12 @@ function isCheck(el) {
     if ($(el).data("check") === "email") {
       result = isEmail($(el).val());
     }
+    if ($(el).data("check") === "phonemail") {
+      result = isPhone($(el).val());
+      if (!result) {
+        result = isEmail($(el).val());
+      }
+    }
     if (!result) {
       if ($(el).hasClass("success")) {
         $(el).removeClass("success");
@@ -65,7 +71,7 @@ function isRequire(classname) {
   return false;
 }
 
-function isForm(form, ct_data) {
+function isForm(form) {
   "use strict";
   if ($(".form." + form).hasClass("shake")) {
     $(".form." + form).removeClass("shake");
@@ -150,7 +156,7 @@ $(document).ready(function () {
     e.preventDefault();
   });
 
-  $(document).on("click", ".button.feedback", function (e) {
+  $(document).on("touchend mouseup", ".button.feedback", function (e) {
     if ($(this).hasClass("active")) {
       if (!$(".form.feedback").hasClass("success")) {
         $(".form.feedback").addClass("success");
@@ -170,6 +176,9 @@ $(document).ready(function () {
     e.preventDefault();
   });
 
-  $("input[type=tel]").inputmask("+7 (999) 999-99-99");
+  if ($("input[type=tel]").length) {
+    $("input[type=tel]").inputmask("+7 (999) 999-99-99");
+  }
+
   return false;
 });

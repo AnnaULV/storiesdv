@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+@keyframes ring-fill {
+  from {
+    transform: translate(-50%, -50%) scale(.7);
+    -webkit-transform: translate(-50%, -50%) scale(.7);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1);
+    -webkit-transform: translate(-50%, -50%) scale(1);
+  }
+
+  to {
+    transform: translate(-50%, -50%) scale(.7);
+    -webkit-transform: translate(-50%, -50%) scale(.7);
+  }
+}
+
+@keyframes ring-hide {
+  from {
+    transform: translate(-50%, -50%) scale(.5);
+    -webkit-transform: translate(-50%, -50%) scale(.5);
+    opacity: .75;
+  }
+
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    -webkit-transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+}
+
+.contacts {
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 60;
+  width: clamp(5rem, 6vw, 7rem);
+  height: clamp(5rem, 6vw, 7rem);
+  cursor: pointer;
+}
+
+.contacts::before,
+.contacts::after {
+  display: block;
+  border-radius: inherit;
+  position: inherit;
+  top: 50%;
+  left: 50%;
+  content: "";
+  background-color: inherit;
+}
+
+.contacts::before {
+  z-index: 10;
+  animation: ring-fill 2.3s infinite ease-in-out;
+  -webkit-animation: ring-fill 2.3s infinite ease-in-out;
+  -moz-animation: ring-fill 2.3s infinite ease-in-out;
+  -o-animation: ring-fill 2.3s infinite ease-in-out;
+  width: clamp(6.5rem, 7.5vw, 8.5rem);
+  height: clamp(6.5rem, 7.5vw, 8.5rem);
+  opacity: .5;
+}
+
+.contacts::after {
+  z-index: 5;
+  animation: ring-hide 2.3s infinite ease-in-out;
+  -webkit-animation: ring-hide 2.3s infinite ease-in-out;
+  -moz-animation: ring-hide 2.3s infinite ease-in-out;
+  -o-animation: ring-hide 2.3s infinite ease-in-out;
+  width: clamp(10rem, 11vw, 12rem);
+  height: clamp(10rem, 11vw, 12rem);
+}
+
+.contacts > div {
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  position: inherit;
+  top: 0;
+  left: 0;
+  z-index: 15;
+}
+
+.contacts > div::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  content: "";
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0);
+  transition: background .15s ease-in-out;
+}
+
+.contacts > div.hover:hover::after {
+  background-color: rgba(0, 0, 0, .1);
+}

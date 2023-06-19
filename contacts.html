@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- meta name="author" content="tarantul web development zone | www.tarantul.zone" / -->
+  <meta name="description" content="Оставьте свои контактные данные и в ближайшее время я свяжусь с вами и отвечу на все интересующие вас вопросы">
+  <link rel="canonical" href="">
+  <!--link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet"-->
+
+  <link href="fonts/Roboto/Slab/Bold/style.css" rel="stylesheet">
+  <link href="fonts/Roboto/Classic/Regular/style.css" rel="stylesheet">
+
+  <style>
+    body,
+    .preloader {
+      overflow: hidden;
+    }
+
+    .content_font,
+    body,
+    label>.field,
+    .button.text>span:last-child {
+      font-family: "Roboto", sans-serif;
+    }
+
+    strong,
+    .accent_font {
+      font-family: "Roboto Slab", serif;
+    }
+
+    a,
+    .accent_color {
+      color: #A9A454;
+    }
+
+    .accent_bg_color {
+      background-color: #A9A454;
+    }
+
+    .accent_border {
+      border: solid 1px #A9A454;
+    }
+
+    .accent_fill svg g,
+    .accent_fill svg path {
+      fill: #A9A454 !important;
+    }
+
+    .content_color {
+      color: #EFE4D4;
+    }
+
+    .content_bg_color {
+      background-color: #EFE4D4;
+    }
+
+    c svg g,
+    .content_fill svg path {
+      fill: #EFE4D4 !important;
+    }
+
+    .preloader {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(24px, 7.5vw, 96px);
+      background-color: #FFF;
+    }
+
+    .preloader.opened {
+      display: flex;
+      transform: translate(0, 0);
+    }
+
+    .preloader:not(.opened) {
+      display: none;
+      transform: translate(0, -100%);
+    }
+
+    .preloader>div {
+      position: relative;
+    }
+
+    .preloader>div:not(.logo),
+    .preloader>div:not(.logo):before,
+    .preloader>div:not(.logo):after {
+      border-radius: 50%;
+      border: .2rem solid transparent;
+      border-top-color: #A9A454;
+      -webkit-animation-name: preloader;
+      animation-name: preloader;
+    }
+
+    .preloader>div,
+    .preloader>.logo svg {
+      width: 100%;
+      height: 100%;
+      max-width: 240px;
+      max-height: 240px;
+    }
+
+    .preloader>div:not(.logo) {
+      -webkit-animation-duration: 2s;
+      animation-duration: 2s;
+    }
+
+    .preloader>div:not(.logo):before,
+    .preloader>div:not(.logo):after {
+      content: "";
+      position: absolute;
+    }
+
+    .preloader>div:not(.logo):before {
+      top: 2px;
+      left: 2px;
+      right: 2px;
+      bottom: 2px;
+      -webkit-animation-duration: 3s;
+      animation-duration: 3s;
+      opacity: .5;
+    }
+
+    .preloader>div:not(.logo):after {
+      top: 6px;
+      left: 6px;
+      right: 6px;
+      bottom: 6px;
+      -webkit-animation-duration: 1.5s;
+      animation-duration: 1.5s;
+      opacity: .75;
+    }
+
+    @keyframes preloader {
+      0% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    .preloader.opened+.wrapper {
+      opacity: 0;
+    }
+
+    .preloader.opened {
+      opacity: 1;
+    }
+
+    @keyframes pulse {
+      from {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+      }
+
+      50% {
+        -webkit-transform: scale3d(1.05, 1.05, 1.05);
+        transform: scale3d(1.05, 1.05, 1.05);
+      }
+
+      to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+      }
+    }
+
+    .preloader>div,
+    .preloader>div:before,
+    .preloader>div:after {
+      -webkit-animation-timing-function: linear;
+      animation-timing-function: linear;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+    }
+
+    .preloader>.logo {
+      -webkit-animation-name: pulse;
+      animation-name: pulse;
+      -webkit-animation-duration: 1.5s;
+      animation-duration: 1.5s;
+    }
+
+  </style>
+
+  <!--script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script-->
+  <script defer src="js/jquery.min.js"></script>
+  <script defer src="js/template.js"></script>
+  <script>
+    function loadJS(source) {
+      "use strict";
+      var s = document.getElementsByTagName("head")[0],
+        sc = document.createElement("script");
+      sc.defer = true;
+      sc.src = source;
+      s.appendChild(sc);
+      return false;
+    }
+
+    function loadCSS(source) {
+      "use strict";
+      let s = document.getElementsByTagName("head")[0];
+      let sc = document.createElement("link");
+      sc.rel = "stylesheet";
+      sc.href = source;
+      s.appendChild(sc);
+      return false;
+    }
+
+    let jsonCSS = JSON.parse('[{"source":"css/reset.css"},{"source":"css/style.css"},{"source":"css/form.css"},{"source":"css/vh.css"},{"source":"css/button.css"}]');
+    jsonCSS.forEach(function(e, i) {
+      setTimeout(function() {
+        loadCSS(jsonCSS[i].source + "?" + $.now());
+      }, 250);
+    });
+
+  </script>
+  <title>«ТАНТРА-БАНЯ» — контактная информация</title>
+</head>
+
+<body class="circle">
+  <div class="preloader opened">
+    <div></div>
+  </div>
+  <div class="wrapper">
+    <div class="workspace">
+      <article class="content_font">
+        <div class="image">
+          <div id="map"></div>
+        </div>
+        <div class="section">
+          <div class="center">
+            <h1 class="heading accent_font">Контакты</h1>
+            <div class="content">
+              <ul class="icons">
+                <li>
+                  <div class="accent_border">
+                    <div class="accent_fill">
+                      <svg width="100%" height="100%" viewBox="0 0 50 50">
+                        <g transform="translate(0,50) scale(.1,-.1)" fill="#FFF" stroke="none">
+                          <path d="M193 466 c-66 -30 -88 -108 -54 -194 23 -59 98 -182 111 -182 12 0 88 123 110 180 24 60 25 89 6 135 -26 61 -108 90 -173 61z m87 -91 c26 -32 -13 -81 -47 -59 -23 14 -28 41 -13 59 16 19 44 19 60 0z"></path>
+                          <path d="M46 106 c-14 -41 -26 -77 -26 -80 0 -3 104 -6 230 -6 127 0 230 3 230 6 0 3 -12 39 -26 80 l-27 74 -38 0 c-21 0 -41 -4 -44 -10 -4 -6 8 -10 30 -10 31 0 38 -4 50 -33 7 -18 17 -45 20 -60 l7 -27 -202 0 -202 0 7 27 c3 15 13 42 20 60 12 29 19 33 50 33 22 0 34 4 30 10 -3 6 -23 10 -44 10 l-38 0 -27 -74z"></path>
+                        </g>
+                      </svg>
+                    </div>
+                  </div>
+                  <div>
+                    <span>125000, город Москва, Варшавское шоссе, 9к1</span>
+                  </div>
+                </li>
+                <li>
+                  <div></div>
+                  <div>
+                    <a class="button hover text accent_bg_color" title="Проложить маршрут" href="https://yandex.ru/maps/213/moscow/?mode=routes&amp;rtext=~55.729843,37.609784&amp;rtt=auto" target="_blank" rel="noopener">
+                      <span></span>
+                      <span class="content_color">Проложить маршрут</span>
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div class="accent_border">
+                    <div class="accent_fill">
+                      <svg width="100%" height="100%" viewBox="0 0 50 50">
+                        <g transform="translate(0,50) scale(0.1,-0.1)" fill="#FFF" stroke="none">
+                          <path d="M64 436 c-19 -19 -34 -42 -34 -52 1 -103 251 -353 353 -354 23 0 87 62 87 84 0 9 -25 32 -55 53 -55 36 -56 36 -89 20 l-33 -15 -61 61 -60 62 16 32 c15 32 15 33 -21 88 -21 30 -44 55 -53 55 -9 0 -31 -15 -50 -34z"></path>
+                        </g>
+                      </svg>
+                    </div>
+                  </div>
+                  <div>
+                    <a href="tel:+79660277613" title="+7 (966) 027-76-13">
+                      <span>+7 (966) 027-76-13</span>
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div class="accent_border">
+                    <div class="accent_fill">
+                      <svg width="100%" height="100%" viewBox="0 0 50 50">
+                        <g transform="translate(0,50) scale(0.1,-0.1)" fill="#FFF" stroke="none">
+                          <path d="M0 416 c0 -19 227 -216 250 -216 23 0 250 196 250 216 0 12 -40 14 -250 14 -206 0 -250 -2 -250 -14z"></path>
+                          <path d="M0 250 c0 -94 3 -120 13 -114 6 4 40 31 75 58 l63 50 -48 43 c-26 24 -60 52 -75 64 l-28 20 0 -121z"></path>
+                          <path d="M428 313 c-37 -32 -67 -62 -67 -68 0 -5 30 -34 67 -63 l67 -54 3 61 c2 34 2 88 0 122 l-3 60 -67 -58z"></path>
+                          <path d="M82 163 c-45 -35 -82 -71 -82 -79 0 -12 41 -14 250 -14 214 0 250 2 250 15 0 8 -37 44 -82 79 l-81 64 -36 -24 c-44 -30 -58 -30 -102 0 l-36 24 -81 -65z"></path>
+                        </g>
+                      </svg>
+                    </div>
+                  </div>
+                  <div>
+                    <a href="mailto:info@site.ru" title="info@site.ru">
+                      <span>info@site.ru</span>
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div class="accent_border">
+                    <div class="accent_fill">
+                      <svg viewBox="0 0 50 50" width="100%" height="100%">
+                        <path d="M46.137,6.552c-0.75-0.636-1.928-0.727-3.146-0.238l-0.002,0C41.708,6.828,6.728,21.832,5.304,22.445	c-0.259,0.09-2.521,0.934-2.288,2.814c0.208,1.695,2.026,2.397,2.248,2.478l8.893,3.045c0.59,1.964,2.765,9.21,3.246,10.758	c0.3,0.965,0.789,2.233,1.646,2.494c0.752,0.29,1.5,0.025,1.984-0.355l5.437-5.043l8.777,6.845l0.209,0.125	c0.596,0.264,1.167,0.396,1.712,0.396c0.421,0,0.825-0.079,1.211-0.237c1.315-0.54,1.841-1.793,1.896-1.935l6.556-34.077	C47.231,7.933,46.675,7.007,46.137,6.552z M22,32l-3,8l-3-10l23-17L22,32z" fill="#FFF"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div>
+                    <a href="https://t.me/newlivadia" title="Telegram" target="_blank" rel="noopener">
+                      <span>Telegram</span>
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div class="accent_border">
+                    <div class="accent_fill">
+                      <svg viewBox="0 0 50 50" width="100%" height="100%">
+                        <path d="M25,2C12.318,2,2,12.318,2,25c0,3.96,1.023,7.854,2.963,11.29L2.037,46.73c-0.096,0.343-0.003,0.711,0.245,0.966 C2.473,47.893,2.733,48,3,48c0.08,0,0.161-0.01,0.24-0.029l10.896-2.699C17.463,47.058,21.21,48,25,48c12.682,0,23-10.318,23-23 S37.682,2,25,2z M36.57,33.116c-0.492,1.362-2.852,2.605-3.986,2.772c-1.018,0.149-2.306,0.213-3.72-0.231 c-0.857-0.27-1.957-0.628-3.366-1.229c-5.923-2.526-9.791-8.415-10.087-8.804C15.116,25.235,13,22.463,13,19.594 s1.525-4.28,2.067-4.864c0.542-0.584,1.181-0.73,1.575-0.73s0.787,0.005,1.132,0.021c0.363,0.018,0.85-0.137,1.329,1.001 c0.492,1.168,1.673,4.037,1.819,4.33c0.148,0.292,0.246,0.633,0.05,1.022c-0.196,0.389-0.294,0.632-0.59,0.973 s-0.62,0.76-0.886,1.022c-0.296,0.291-0.603,0.606-0.259,1.19c0.344,0.584,1.529,2.493,3.285,4.039 c2.255,1.986,4.158,2.602,4.748,2.894c0.59,0.292,0.935,0.243,1.279-0.146c0.344-0.39,1.476-1.703,1.869-2.286 s0.787-0.487,1.329-0.292c0.542,0.194,3.445,1.604,4.035,1.896c0.59,0.292,0.984,0.438,1.132,0.681 C37.062,30.587,37.062,31.755,36.57,33.116z" fill="#FFF"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div>
+                    <a href="https://api.whatsapp.com/send/?phone=79660277613" title="WhatsApp" target="_blank" rel="noopener">
+                      <span>WhatsApp</span>
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="section">
+          <div class="center">
+            <div class="form feedback">
+              <span class="accent_font heading" data-header="Оставьте заявку"></span>
+            </div>
+          </div>
+          <div class="center">
+            <div class="form feedback">
+              <div>
+                <p>
+                  <span>Оставьте свои контактные данные и в ближайшее время я свяжусь с вами и отвечу на все интересующие вас вопросы.</span>
+                </p>
+                <p>
+                  <span>Ваша заявка успешно отправлена, в ближайшее время я свяжусь с вами и отвечу на все интересующие вас вопросы.</span>
+                </p>
+                <form name="feedback" method="post" action="#" autocomplete="off">
+                  <ul>
+                    <li>
+                      <div class="required name">
+                        <label class="required">
+                          <input class="field" type="text" name="QUEST[NAME]" value="" data-check="name" data-form="feedback" autocomplete="off">
+                          <span>
+                            <span class="small">Имя</span>
+                          </span>
+                        </label>
+                      </div>
+                      <div class="required phonemail">
+                        <label class="required">
+                          <input class="field" type="text" name="QUEST[CONTACT]" value="" data-check="phonemail" data-form="feedback" autocomplete="off">
+                          <span>
+                            <span class="small">Телефон или E-mail</span>
+                          </span>
+                        </label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="message">
+                        <label>
+                          <textarea class="field" name="QUEST[MESSAGE]" data-form="feedback" autocomplete="off"></textarea>
+                          <span>
+                            <span class="small">Текст сообщения</span>
+                          </span>
+                        </label>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <button type="button" aria-label="Отправить" class="button action hover text feedback accent_bg_color">
+                        <span></span>
+                        <span class="content_color">Отправить</span>
+                      </button>
+                    </li>
+                    <li>
+                      <p class="small">Нажимая кнопку «Отправить» вы даете согласие на обработку персональных данных в соответсвии с <a href="policy.html" title="политика конфиденциальности" target="_blank">политикой конфиденциальности</a></p>
+                    </li>
+                  </ul>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+  <script>
+    window.onload = function() {
+
+      if ($("#map").length) {
+        loadCSS("css/map.css");
+        loadJS("https://api-maps.yandex.ru/2.1/?lang=ru_RU");
+        let timerID = setInterval(function() {
+          if (typeof ymaps !== "undefined") {
+            ymaps.ready(init);
+
+            function init() {
+              "use strict";
+              var myMap = new ymaps.Map('map', {
+                center: [52.588976, 39.539257],
+                zoom: 12,
+                controls: ['zoomControl'],
+                behaviors: ['drag']
+              }, {
+                zoomControlPosition: {
+                  left: 24,
+                  bottom: 24
+                },
+                zoomControlSize: 'small',
+                searchControlProvider: 'yandex#search',
+                yandexMapDisablePoiInteractivity: true
+              });
+
+              myMap.geoObjects.add(new ymaps.Placemark([52.588976, 39.539257], {
+                iconCaption: 'ТАНТРА-БАНЯ'
+              }, {
+                preset: 'islands#circleDotIcon',
+                iconColor: '#A9A454',
+                iconOffset: [-8, 8]
+              }));
+            }
+            clearInterval(timerID);
+          }
+        }, 250);
+      }
+
+      if ($("input[type=tel]").length) {
+        loadJS("js/inputmask.min.js" + "?" + $.now());
+      }
+
+      setTimeout(function() {
+        $(".preloader.opened").animate({
+          opacity: 0
+        }, 500);
+        $(".wrapper").animate({
+          opacity: 1
+        }, 500);
+        setTimeout(function() {
+          $(".preloader.opened").removeClass("opened");
+          loadJS("js/form.js" + "?" + $.now());
+        }, 500);
+      }, 500);
+
+    }
+
+  </script>
+</body>
+
+</html>

@@ -5,8 +5,8 @@
 }
 
 body {
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
+  /* -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%; */
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale;
   -webkit-backface-visibility: hidden;
@@ -69,7 +69,9 @@ section,
 img,
 a img,
 div {
-  font: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
   vertical-align: baseline;
 }
 

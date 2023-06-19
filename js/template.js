@@ -2,55 +2,103 @@ function isReady() {
   "use strict";
   let vh = $(window).innerHeight() * 0.01;
   document.documentElement.style.setProperty("--vh", `${vh}px`);
-  if ($(".swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center.overlap > .image").length) {
-    if ($(window).innerHeight() > $(window).innerWidth()) {
-      let param = parseInt($(window).innerWidth() - 48);
-      if (param > parseInt($(window).innerHeight() - 160)) {
-        param = parseInt($(window).innerHeight() - 160);
-      }
-      $(".swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center.overlap > .image").css({
-        "width": param + "px",
-        "height": param + "px"
-      });
-    } else {
-      let param = parseInt($(window).innerHeight() - 160);
-      if (param < 320) {
-        param = 320;
-      }
-      $(".swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center.overlap > .image").css({
-        "width": param + "px",
-        "height": param + "px"
-      });
-    }
-  }
   return false;
 }
 
 $(window).on("load", function () {
   "use strict";
+
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     $(".hover").each(function () {
       $(this).removeClass("hover");
     });
   }
+
+  $(document).on("touchend mouseup", ".action", function (e) {
+    if ($(this).data("action")) {
+
+      if ($(this).data("action") === "iframe") {
+        if ($(".wrapper").length) {
+          if ($(".wrapper > .iframe > iframe").length === 0) {
+            const el = document.createElement("iframe");
+            if ($(window).innerWidth() > 1200) {
+              el.style.width = 1200 + "px";
+            } else {
+              el.style.width = $(window).innerWidth() + "px";
+            }
+            document.getElementsByClassName("iframe")[0].appendChild(el);
+            if ($(this).data("iframe")) {
+              $(".wrapper > .iframe > iframe").attr("src", $(this).data("iframe"));
+            }
+          }
+          if (!$(".wrapper").hasClass("opened")) {
+            $(".wrapper").addClass("opened");
+          }
+          if (!$(".wrapper").hasClass("frame")) {
+            $(".wrapper").addClass("frame");
+          }
+          if ($(".wrapper > span").length) {
+            $(".wrapper > span").css({
+              width: 100 + "%"
+            });
+            $("body > div > span").animate({
+              opacity: 1
+            }, 150);
+          }
+          setTimeout(function () {
+            if ($(".wrapper > .iframe > iframe").length > 0) {
+              $(".wrapper > .iframe > iframe").css({
+                width: "100%"
+              });
+            }
+          }, 150);
+        }
+      }
+
+      if ($(this).data("action") === "close") {
+        if ($(".wrapper").length) {
+          if ($(".wrapper").hasClass("opened")) {
+            if ($(".wrapper").hasClass("frame")) {
+              if ($(".wrapper > .iframe > iframe").length > 0) {
+                $(".wrapper > .iframe > iframe").css({
+                  width: $(".wrapper > .iframe").innerWidth() + "px"
+                });
+              }
+              $(".wrapper").removeClass("frame");
+              setTimeout(function () {
+                $(".wrapper > span").animate({
+                  opacity: 0
+                }, 150, function () {
+                  $(".wrapper > span").css({
+                    width: 0
+                  });
+                  $(".wrapper").removeClass("opened");
+                });
+                if ($(".wrapper > .iframe > iframe").length > 0) {
+                  document.getElementsByTagName("iframe")[0].parentNode.removeChild(document.getElementsByTagName("iframe")[0]);
+                }
+              }, 150);
+            }
+          }
+        }
+      }
+
+    }
+    e.preventDefault();
+  });
+
   isReady();
   return false;
 });
 
-/* окно поменяло ориентацию горизонтально <——> вертикально */
 $(window).on("orientationchange", function () {
-  /* обрабатывать код в «строгом режиме» */
   "use strict";
-  /* перезагрузить документ */
   location.reload();
   return false;
 });
 
-/* окно поменяло размер */
 $(window).on("resize", function () {
-  /* обрабатывать код в «строгом режиме» */
   "use strict";
-  /* повторный вызов функции — после того, как документ полностью загружен (корректировка отображения элементов) */
   isReady();
   return false;
 });

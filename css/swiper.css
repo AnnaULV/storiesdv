@@ -20,7 +20,7 @@
 
 .swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center,
 .swiper-pagination,
-.swiper-button,
+.swiper-buttons,
 .swiper-container > .swiper > .swiper-wrapper {
   display: flex;
 }
@@ -30,7 +30,7 @@
 }
 
 article > .swiper-container > .swiper > .swiper-wrapper > .swiper-slide {
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, .4);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -38,11 +38,14 @@ article > .swiper-container > .swiper > .swiper-wrapper > .swiper-slide {
   padding: clamp(10rem, 14vw, 18rem) 0;
 }
 
-.swiper-container > .swiper > .swiper-wrapper > .swiper-slide:not(.swiper-slide-active) {
+.swiper-pagination,
+.swiper-pagination > .swiper-pagination-bullet::before,
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide:not(.swiper-slide-visible) {
   z-index: 1;
 }
 
-.swiper-container > .swiper > .swiper-wrapper > .swiper-slide.swiper-slide-active {
+.swiper-pagination > .swiper-pagination-bullet > span,
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide.swiper-slide-visible {
   z-index: 2;
 }
 
@@ -51,116 +54,91 @@ article > .swiper-container > .swiper > .swiper-wrapper > .swiper-slide {
   overflow: hidden;
 }
 
-/* изображение — сверху, текст — снизу */
-.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center:not(.overlap) {
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center {
   flex-direction: column;
   justify-content: space-between;
 }
 
-/* текст перекрывает изображение */
-.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center.overlap {
-  align-items: flex-end;
-}
-
-/* изображение — сверху, текст — снизу */
-.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center:not(.overlap) > .image {
-  width: 100%;
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image {
   flex-grow: 1;
-  background-repeat: no-repeat;
-  background-position: 100% 50%;
-  background-size: contain;
-  max-height: 80rem;
+  margin-top: clamp(5rem, 6vw, 7rem);
   margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
 }
 
-/* текст перекрывает изображение */
-.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center.overlap > .image {
-  width: clamp(40rem, 50vw, 60rem);
-  height: clamp(40rem, 50vw, 60rem);
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: contain;
-  position: absolute;
-  top: 0;
-  right: 3rem;
-  z-index: 1;
-  max-width: 80rem;
-  max-height: 80rem;
-  opacity: .75;
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image > svg {
+  height: 100%;
+  max-height: 30rem;
+  width: auto;
+  max-width: 30rem;
 }
 
 .swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image + div {
-  font-size: clamp(2.5rem, 2.75vw, 3rem);
   z-index: 2;
   text-shadow: .125rem .125rem .25rem rgba(0, 0, 0, .25);
-  line-height: 1.1;
 }
 
-.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image + div > .heading {
-  font-size: clamp(3.5rem, 5.5vw, 7.5rem);
-  font-family: "accent", sans-serif;
-  margin-bottom: clamp(2rem, 3vw, 4rem);
-}
-
-.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image + div > a {
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image + div > .more {
   display: inline-flex;
-  /* margin: 0 0 1rem 0; */
+  cursor: pointer;
 }
 
-.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image + div > a > span {
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image + div > .more > span {
   display: flex;
   align-items: center;
   height: 5rem;
 }
 
-.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image + div > a > span:first-child {
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image + div > .more > span:first-child {
   text-decoration: underline;
 }
 
-.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image + div > a,
-.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image + div > a:hover > span:first-child {
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image + div > .more,
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image + div > .more.hover:hover > span:first-child {
   text-decoration: none;
 }
 
-.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image + div > a > span + span {
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image + div > .more > span + span {
   width: 4rem;
   overflow: hidden;
   margin-left: 2rem;
   padding-top: 1rem;
   justify-content: flex-end;
-  transition: width .25s ease-in-out;
+  transition: width .15s ease-in-out;
 }
 
-.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image + div > a:hover > span + span {
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image + div > .more.hover:hover > span + span {
   width: 6rem;
 }
 
-.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image + div > a > span + span > span {
+.swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image + div > .more > span + span > span {
   width: 8rem;
 }
 
-.swiper-button.swiper-button-disabled {
+.swiper-buttons > .swiper-button.swiper-button-disabled {
   opacity: .25;
 }
 
+.swiper-pagination > .swiper-pagination-bullet > span,
 .swiper-button {
-  transition: opacity .25s ease-in-out;
+  transition: opacity .15s ease-in-out;
 }
 
-.swiper-button.next {
+.swiper-buttons > .swiper-button.next {
   margin-left: 1rem;
 }
 
-.swiper-button.prev {
+.swiper-buttons > .swiper-button.prev {
   transform: scale(-1, 1);
 }
 
 .swiper-pagination {
-  z-index: 1;
   align-items: center;
   left: 0;
-  top: calc(50% - .5rem);
+  top: calc(50% - .25rem);
   width: 100%;
+  height: .5rem;
 }
 
 .swiper-pagination > .swiper-pagination-bullet {
@@ -177,7 +155,6 @@ article > .swiper-container > .swiper > .swiper-wrapper > .swiper-slide {
   position: absolute;
   top: calc(50% - 2.5rem);
   left: 0;
-  z-index: 1;
   width: 100%;
   height: 5rem;
   content: "";
@@ -195,18 +172,20 @@ article > .swiper-container > .swiper > .swiper-wrapper > .swiper-slide {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
   height: 100%;
   width: 0;
   background-color: rgba(255, 255, 255, 1);
-  transition: background .25s linear;
 }
 
 .swiper-pagination > .swiper-pagination-bullet.hover:hover > span {
-  background-color: rgba(255, 255, 255, .5);
+  opacity: .5;
 }
 
 .circle .swiper-pagination > .swiper-pagination-bullet,
 .circle .swiper-pagination > .swiper-pagination-bullet > span {
-  border-radius: .5rem;
+  border-radius: .25rem;
+}
+
+.contacts > .swiper-container > .swiper {
+  transform: scale(.5);
 }
