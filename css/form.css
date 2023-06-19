@@ -211,7 +211,6 @@
   50%,
   70%,
   90% {
-    -webkit-transform: translate3d(-.15rem, 0, 0);
     transform: translate3d(-.15rem, 0, 0);
   }
 
@@ -219,17 +218,13 @@
   40%,
   60%,
   80% {
-    -webkit-transform: translate3d(.15rem, 0, 0);
     transform: translate3d(.15rem, 0, 0);
   }
 }
 
 .shake {
-  -webkit-animation-duration: .75s;
   animation-duration: .75s;
-  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  -webkit-animation-name: shake;
   animation-name: shake;
 }
 

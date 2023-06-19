@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- meta name="author" content="tarantul web development zone | www.tarantul.zone" / -->
   <meta name="description" content="Оставьте свои контактные данные и в ближайшее время я свяжусь с вами и отвечу на все интересующие вас вопросы">
-  <link rel="canonical" href="">
+  <!--link rel="canonical" href=""-->
   <!--link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap" rel="stylesheet">
@@ -22,14 +22,11 @@
       overflow: hidden;
     }
 
-    .content_font,
     body,
-    label>.field,
-    .button.text>span:last-child {
-      font-family: "Roboto", sans-serif;
+    .content_font {
+      font-family: "Roboto", serif;
     }
 
-    strong,
     .accent_font {
       font-family: "Roboto Slab", serif;
     }
@@ -41,10 +38,6 @@
 
     .accent_bg_color {
       background-color: #A9A454;
-    }
-
-    .accent_border {
-      border: solid 1px #A9A454;
     }
 
     .accent_fill svg g,
@@ -60,7 +53,7 @@
       background-color: #EFE4D4;
     }
 
-    c svg g,
+    .content_fill svg g,
     .content_fill svg path {
       fill: #EFE4D4 !important;
     }
@@ -98,7 +91,6 @@
       border-radius: 50%;
       border: .2rem solid transparent;
       border-top-color: #A9A454;
-      -webkit-animation-name: preloader;
       animation-name: preloader;
     }
 
@@ -111,7 +103,6 @@
     }
 
     .preloader>div:not(.logo) {
-      -webkit-animation-duration: 2s;
       animation-duration: 2s;
     }
 
@@ -126,7 +117,6 @@
       left: 2px;
       right: 2px;
       bottom: 2px;
-      -webkit-animation-duration: 3s;
       animation-duration: 3s;
       opacity: .5;
     }
@@ -136,19 +126,16 @@
       left: 6px;
       right: 6px;
       bottom: 6px;
-      -webkit-animation-duration: 1.5s;
       animation-duration: 1.5s;
       opacity: .75;
     }
 
     @keyframes preloader {
       0% {
-        -webkit-transform: rotate(360deg);
         transform: rotate(0deg);
       }
 
       100% {
-        -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
       }
     }
@@ -163,17 +150,14 @@
 
     @keyframes pulse {
       from {
-        -webkit-transform: scale3d(1, 1, 1);
         transform: scale3d(1, 1, 1);
       }
 
       50% {
-        -webkit-transform: scale3d(1.05, 1.05, 1.05);
         transform: scale3d(1.05, 1.05, 1.05);
       }
 
       to {
-        -webkit-transform: scale3d(1, 1, 1);
         transform: scale3d(1, 1, 1);
       }
     }
@@ -181,18 +165,13 @@
     .preloader>div,
     .preloader>div:before,
     .preloader>div:after {
-      -webkit-animation-timing-function: linear;
       animation-timing-function: linear;
-      -webkit-animation-iteration-count: infinite;
       animation-iteration-count: infinite;
-      -webkit-animation-fill-mode: both;
       animation-fill-mode: both;
     }
 
     .preloader>.logo {
-      -webkit-animation-name: pulse;
       animation-name: pulse;
-      -webkit-animation-duration: 1.5s;
       animation-duration: 1.5s;
     }
 
@@ -240,14 +219,14 @@
   </div>
   <div class="wrapper">
     <div class="workspace">
-      <article class="content_font">
+      <article>
         <div class="image">
           <div id="map"></div>
         </div>
         <div class="section">
           <div class="center">
             <h1 class="heading accent_font">Контакты</h1>
-            <div class="content">
+            <div class="content content_font">
               <ul class="icons">
                 <li>
                   <div class="accent_border">
@@ -269,7 +248,7 @@
                   <div>
                     <a class="button hover text accent_bg_color" title="Проложить маршрут" href="https://yandex.ru/maps/213/moscow/?mode=routes&amp;rtext=~55.729843,37.609784&amp;rtt=auto" target="_blank" rel="noopener">
                       <span></span>
-                      <span class="content_color">Проложить маршрут</span>
+                      <span class="content_color content_font">Проложить маршрут</span>
                     </a>
                   </div>
                 </li>
@@ -348,7 +327,7 @@
           </div>
           <div class="center">
             <div class="form feedback">
-              <div>
+              <div class="content_font">
                 <p>
                   <span>Оставьте свои контактные данные и в ближайшее время я свяжусь с вами и отвечу на все интересующие вас вопросы.</span>
                 </p>
@@ -390,7 +369,7 @@
                     <li>
                       <button type="button" aria-label="Отправить" class="button action hover text feedback accent_bg_color">
                         <span></span>
-                        <span class="content_color">Отправить</span>
+                        <span class="content_color content_font">Отправить</span>
                       </button>
                     </li>
                     <li>

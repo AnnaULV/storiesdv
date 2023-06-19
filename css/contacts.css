@@ -3,30 +3,25 @@
 @keyframes ring-fill {
   from {
     transform: translate(-50%, -50%) scale(.7);
-    -webkit-transform: translate(-50%, -50%) scale(.7);
   }
 
   50% {
     transform: translate(-50%, -50%) scale(1);
-    -webkit-transform: translate(-50%, -50%) scale(1);
   }
 
   to {
     transform: translate(-50%, -50%) scale(.7);
-    -webkit-transform: translate(-50%, -50%) scale(.7);
   }
 }
 
 @keyframes ring-hide {
   from {
     transform: translate(-50%, -50%) scale(.5);
-    -webkit-transform: translate(-50%, -50%) scale(.5);
     opacity: .75;
   }
 
   to {
     transform: translate(-50%, -50%) scale(1);
-    -webkit-transform: translate(-50%, -50%) scale(1);
     opacity: 0;
   }
 }
@@ -56,9 +51,6 @@
 .contacts::before {
   z-index: 10;
   animation: ring-fill 2.3s infinite ease-in-out;
-  -webkit-animation: ring-fill 2.3s infinite ease-in-out;
-  -moz-animation: ring-fill 2.3s infinite ease-in-out;
-  -o-animation: ring-fill 2.3s infinite ease-in-out;
   width: clamp(6.5rem, 7.5vw, 8.5rem);
   height: clamp(6.5rem, 7.5vw, 8.5rem);
   opacity: .5;
@@ -67,9 +59,6 @@
 .contacts::after {
   z-index: 5;
   animation: ring-hide 2.3s infinite ease-in-out;
-  -webkit-animation: ring-hide 2.3s infinite ease-in-out;
-  -moz-animation: ring-hide 2.3s infinite ease-in-out;
-  -o-animation: ring-hide 2.3s infinite ease-in-out;
   width: clamp(10rem, 11vw, 12rem);
   height: clamp(10rem, 11vw, 12rem);
 }
@@ -94,8 +83,6 @@
   border-radius: 50%;
   content: "";
   transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 0);
   transition: background .15s ease-in-out;
 }
