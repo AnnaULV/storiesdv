@@ -18,10 +18,10 @@
   height: 100%;
 }
 
+.swiper-container > .swiper > .swiper-wrapper,
 .swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center,
 .swiper-pagination,
-.swiper-buttons,
-.swiper-container > .swiper > .swiper-wrapper {
+.swiper-buttons {
   display: flex;
 }
 
@@ -35,6 +35,7 @@ article > .swiper-container > .swiper > .swiper-wrapper > .swiper-slide {
   background-repeat: no-repeat;
   background-position: center;
   background-blend-mode: color, darken;
+  padding: 10rem 0;
   padding: clamp(10rem, 14vw, 18rem) 0;
 }
 
@@ -61,6 +62,7 @@ article > .swiper-container > .swiper > .swiper-wrapper > .swiper-slide {
 
 .swiper-container > .swiper > .swiper-wrapper > .swiper-slide > .center > .image {
   flex-grow: 1;
+  margin-top: 5rem;
   margin-top: clamp(5rem, 6vw, 7rem);
   margin-bottom: 3rem;
   display: flex;

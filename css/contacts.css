@@ -32,7 +32,9 @@
   right: 0;
   top: 0;
   z-index: 60;
+  width: 5rem;
   width: clamp(5rem, 6vw, 7rem);
+  height: 5rem;
   height: clamp(5rem, 6vw, 7rem);
   cursor: pointer;
 }
@@ -46,26 +48,41 @@
   left: 50%;
   content: "";
   background-color: inherit;
+  animation-delay: 0s;  
+  animation-duration: 2.3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
 }
 
 .contacts::before {
   z-index: 10;
-  animation: ring-fill 2.3s infinite ease-in-out;
+  width: 6.5rem;
   width: clamp(6.5rem, 7.5vw, 8.5rem);
+  height: 6.5rem;
   height: clamp(6.5rem, 7.5vw, 8.5rem);
   opacity: .5;
 }
 
 .contacts::after {
   z-index: 5;
-  animation: ring-hide 2.3s infinite ease-in-out;
+  width: 10rem;
   width: clamp(10rem, 11vw, 12rem);
+  height: 10rem;
   height: clamp(10rem, 11vw, 12rem);
 }
 
+.contacts.active::before {
+  animation-name: ring-fill;
+}
+
+.contacts.active::after {
+  animation-name: ring-hide;
+}
+
 .contacts > div {
-  width: inherit;
-  height: inherit;
+  width: 100%;
+  height: 100%;
   border-radius: inherit;
   position: inherit;
   top: 0;

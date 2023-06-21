@@ -4,9 +4,9 @@
   display: block;
 }
 
-.form:not(.success) > .heading::after {
+/* .form:not(.success) > .heading::after {
   content: attr(data-header);
-}
+} */
 
 .form.success > .heading::after {
   content: "Спасибо!"
@@ -94,6 +94,7 @@
 .form > div > form > ul > li > div {
   display: flex;
   flex-grow: 1;
+  min-height: 5rem;
   min-height: clamp(5rem, 6vw, 7rem);
   margin-top: 5rem;
 }
@@ -124,7 +125,9 @@
 .circle .form > div > form > ul > li > div > label > input[type=text],
 .circle .form > div > form > ul > li > div > label > input[type=email],
 .circle .form > div > form > ul > li > div > label > input[type=tel] {
+  border-radius: 2.5rem;
   border-radius: clamp(2.5rem, 3vw, 3.5rem);
+  padding: 1rem 2rem;
   padding: clamp(1rem, 1.5vw, 2rem) clamp(2rem, 2.5vw, 3rem);
 }
 

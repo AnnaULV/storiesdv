@@ -18,7 +18,9 @@
   border: 0;
   margin: 0;
   padding: 0;
+  height: 5rem;
   height: clamp(5rem, 6vw, 7rem);
+  min-width: 5rem;
   min-width: clamp(5rem, 6vw, 7rem);
   box-shadow: .125rem .125rem .25rem rgba(0, 0, 0, .25);
   cursor: pointer;
@@ -26,6 +28,7 @@
 
 .circle .button.hover::before,
 .circle .button {
+  border-radius: 2.5rem;
   border-radius: clamp(2.5rem, 3vw, 3.5rem);
 }
 
@@ -51,7 +54,9 @@
 }
 
 .button.text > span:last-child {
+  margin-left: 2rem;
   margin-left: clamp(2rem, 2.5vw, 3rem);
+  margin-right: 2rem;
   margin-right: clamp(2rem, 2.5vw, 3rem);
   white-space: nowrap;
   color: #fff;

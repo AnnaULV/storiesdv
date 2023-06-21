@@ -159,6 +159,7 @@ $(document).ready(function () {
   $(document).on("touchend mouseup", ".button.feedback", function (e) {
     if ($(this).hasClass("active")) {
       if (!$(".form.feedback").hasClass("success")) {
+        $(".form.feedback").find(".heading").text("");
         $(".form.feedback").addClass("success");
         /* isForm("feedback"); */
       }
@@ -176,8 +177,8 @@ $(document).ready(function () {
     e.preventDefault();
   });
 
-  if ($("input[type=tel]").length) {
-    $("input[type=tel]").inputmask("+7 (999) 999-99-99");
+  if (document.querySelectorAll("input[type='tel']").length) {
+    $("input[type='tel']").inputmask("+7 (999) 999-99-99");
   }
 
   return false;

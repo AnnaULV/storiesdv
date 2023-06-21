@@ -7,14 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- meta name="author" content="tarantul web development zone | www.tarantul.zone" / -->
   <meta name="description" content="Приглашаю мужчин и пары из Москвы и МО на банную программу для отдыха и наслаждения, включающую в себя нежные парения в бане и авторский чувственный массаж">
-  <link rel="canonical" href="">
-  <!--link rel="preconnect" href="https://fonts.googleapis.com">
+  <!--link rel="canonical" href=""-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet"-->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
 
-  <link href="fonts/Roboto/Slab/Bold/style.css?1231" rel="stylesheet">
-  <link href="fonts/Roboto/Classic/Bold/style.css?1231" rel="stylesheet">
+  <!--link href="fonts/Roboto/Slab/Bold/style.css?1231" rel="stylesheet">
+  <link href="fonts/Roboto/Classic/Bold/style.css?1231" rel="stylesheet"-->
 
   <style>
     body,
@@ -27,6 +27,7 @@
       font-family: "Roboto", serif;
     }
 
+    strong,
     .accent_font {
       font-family: "Roboto Slab", serif;
     }
@@ -67,6 +68,7 @@
       z-index: 1000;
       align-items: center;
       justify-content: center;
+      padding: 24px;
       padding: clamp(24px, 7.5vw, 96px);
       background-color: #FFF;
     }
@@ -89,7 +91,7 @@
     .preloader>div:not(.logo):before,
     .preloader>div:not(.logo):after {
       border-radius: 50%;
-      border: .2rem solid transparent;
+      border: 2px solid transparent;
       border-top-color: #A9A454;
       animation-name: preloader;
     }
@@ -98,8 +100,8 @@
     .preloader>.logo svg {
       width: 100%;
       height: 100%;
-      max-width: 240px;
-      max-height: 240px;
+      max-width: 160px;
+      max-height: 160px;
     }
 
     .preloader>div:not(.logo) {
@@ -174,20 +176,20 @@
       animation-name: pulse;
       animation-duration: 1.5s;
     }
-
   </style>
 
-  <!--script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script-->
-  <script defer src="js/jquery.min.js"></script>
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <!--script defer src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script-->
+  <!--script defer src="js/jquery.min.js"></script-->
   <script defer src="js/template.js"></script>
+  <script defer src="js/swiper.min.js"></script>
   <script>
     function loadJS(source) {
       "use strict";
       var s = document.getElementsByTagName("head")[0],
         sc = document.createElement("script");
       sc.defer = true;
-      sc.src = source;
+      sc.src = source + "?" + Date.now();
       s.appendChild(sc);
       return false;
     }
@@ -197,18 +199,17 @@
       let s = document.getElementsByTagName("head")[0];
       let sc = document.createElement("link");
       sc.rel = "stylesheet";
-      sc.href = source;
+      sc.href = source + "?" + Date.now();
       s.appendChild(sc);
       return false;
     }
 
-    let jsonCSS = JSON.parse('[{"source":"css/reset.css"},{"source":"css/style.css"},{"source":"css/vh.css"},{"source":"css/button.css"}]');
+    let jsonCSS = JSON.parse('[{"source":"css/reset.css"},{"source":"css/style.css"},{"source":"css/button.css"},{"source":"css/swiper.css"},{"source":"css/contacts.css"}]');
     jsonCSS.forEach(function(e, i) {
       setTimeout(function() {
-        loadCSS(jsonCSS[i].source + "?" + $.now());
+        loadCSS(jsonCSS[i].source);
       }, 250);
     });
-
   </script>
   <title>«ТАНТРА-БАНЯ» — банная программа для отдыха и наслаждения</title>
 </head>
@@ -240,7 +241,7 @@
         <div class="header">
           <div class="center">
             <div>
-              <div class="contacts accent_bg_color">
+              <div class="contacts active accent_bg_color">
                 <div class="swiper-container action hover" data-action="iframe" data-iframe="contacts.html">
                   <div class="swiper">
                     <div class="swiper-wrapper">
@@ -447,14 +448,11 @@
   </div>
   <script>
     window.onload = function() {
-
-      if ($(".swiper-container > .swiper > .swiper-wrapper > .swiper-slide").length) {
-        loadJS("js/swiper.min.js" + "?" + $.now());
-        loadCSS("css/swiper.css");
-        loadCSS("css/contacts.css");
+        
+      if (document.querySelectorAll(".swiper-container > .swiper > .swiper-wrapper > .swiper-slide").length) {
         let timerID = setInterval(function() {
           if (typeof Swiper !== "undefined") {
-            loadJS("js/stories.js" + "?" + $.now());
+            loadJS("js/stories.swiper.js");
             clearInterval(timerID);
           }
         }, 250);
@@ -471,9 +469,21 @@
           $(".preloader.opened").removeClass("opened");
         }, 500);
       }, 500);
+      
+      if (document.querySelectorAll(".contacts").length) {
+        document.querySelectorAll(".contacts").forEach((element) => {
+          if (element.classList.contains("active") === false) {
+            element.classList.add("active");
+          } else {
+            element.classList.remove("active");
+            setTimeout(function() { 
+              element.classList.add("active");  
+            }, 500);
+          }
+        });
+      }
+      
     }
-
   </script>
 </body>
-
 </html>

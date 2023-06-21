@@ -6,15 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- meta name="author" content="tarantul web development zone | www.tarantul.zone" / -->
-  <meta name="description" content="Оставьте свои контактные данные и в ближайшее время я свяжусь с вами и отвечу на все интересующие вас вопросы">
+  <meta name="description" content="Я очень тонко чувствую вас и ваше тело, делая парения комфортными — от нежных до интенсивных">
   <!--link rel="canonical" href=""-->
-  <!--link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet"-->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
 
-  <link href="fonts/Roboto/Slab/Bold/style.css" rel="stylesheet">
-  <link href="fonts/Roboto/Classic/Regular/style.css" rel="stylesheet">
+  <!--link href="fonts/Roboto/Slab/Bold/style.css?1231" rel="stylesheet">
+  <link href="fonts/Roboto/Classic/Bold/style.css?1231" rel="stylesheet"-->
 
   <style>
     body,
@@ -27,6 +27,7 @@
       font-family: "Roboto", serif;
     }
 
+    strong,
     .accent_font {
       font-family: "Roboto Slab", serif;
     }
@@ -67,6 +68,7 @@
       z-index: 1000;
       align-items: center;
       justify-content: center;
+      padding: 24px;
       padding: clamp(24px, 7.5vw, 96px);
       background-color: #FFF;
     }
@@ -89,7 +91,7 @@
     .preloader>div:not(.logo):before,
     .preloader>div:not(.logo):after {
       border-radius: 50%;
-      border: .2rem solid transparent;
+      border: 2px solid transparent;
       border-top-color: #A9A454;
       animation-name: preloader;
     }
@@ -98,8 +100,8 @@
     .preloader>.logo svg {
       width: 100%;
       height: 100%;
-      max-width: 240px;
-      max-height: 240px;
+      max-width: 160px;
+      max-height: 160px;
     }
 
     .preloader>div:not(.logo) {
@@ -177,17 +179,18 @@
 
   </style>
 
-  <!--script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script-->
-  <script defer src="js/jquery.min.js"></script>
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <!--script defer src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script-->
+  <!--script defer src="js/jquery.min.js"></script-->
   <script defer src="js/template.js"></script>
+  <!--script defer src="js/swiper.min.js"></script-->
   <script>
     function loadJS(source) {
       "use strict";
       var s = document.getElementsByTagName("head")[0],
         sc = document.createElement("script");
       sc.defer = true;
-      sc.src = source;
+      sc.src = source + "?" + Date.now();
       s.appendChild(sc);
       return false;
     }
@@ -197,15 +200,15 @@
       let s = document.getElementsByTagName("head")[0];
       let sc = document.createElement("link");
       sc.rel = "stylesheet";
-      sc.href = source;
+      sc.href = source + "?" + Date.now();
       s.appendChild(sc);
       return false;
     }
 
-    let jsonCSS = JSON.parse('[{"source":"css/reset.css"},{"source":"css/style.css"},{"source":"css/form.css"},{"source":"css/vh.css"},{"source":"css/button.css"}]');
+    let jsonCSS = JSON.parse('[{"source":"css/reset.css"},{"source":"css/style.css"},{"source":"css/button.css"},{"source":"css/form.css"}]');
     jsonCSS.forEach(function(e, i) {
       setTimeout(function() {
-        loadCSS(jsonCSS[i].source + "?" + $.now());
+        loadCSS(jsonCSS[i].source);
       }, 250);
     });
 
@@ -316,20 +319,20 @@
   <script>
     window.onload = function() {
 
-      if ($(".swiper-container > .swiper > .swiper-wrapper > .swiper-slide").length) {
+      if (document.querySelectorAll(".swiper-container > .swiper > .swiper-wrapper > .swiper-slide").length) {
         loadCSS("css/swiper.css");
         loadCSS("css/gallery.swiper.css");
-        loadJS("js/swiper.min.js" + "?" + $.now());
-        let timerSwiper = setInterval(function() {
+        loadJS("js/swiper.min.js");
+        let timerID = setInterval(function() {
           if (typeof Swiper !== "undefined") {
-            loadJS("js/gallery.swiper.js" + "?" + $.now());
-            clearInterval(timerSwiper);
+            loadJS("js/gallery.swiper.js");
+            clearInterval(timerID);
           }
         }, 250);
       }
 
-      if ($(".lazy").length) {
-        loadJS("js/lazyload.min.js" + "?" + $.now());
+      if (document.querySelectorAll(".lazy").length) {
+        loadJS("js/lazyload.min.js");
         let timerLazy = setInterval(function() {
           if (typeof LazyLoad !== "undefined") {
             var myLazyLoad = new LazyLoad({
@@ -340,8 +343,14 @@
         }, 250);
       }
 
-      if ($("input[type=tel]").length) {
-        loadJS("js/inputmask.min.js" + "?" + $.now());
+      if (document.querySelectorAll("[data-header]").length) {
+        document.querySelectorAll("[data-header]").forEach((element) => {
+          element.innerText = element.dataset.header;
+        });
+      }
+
+      if (document.querySelectorAll("input[type='tel']").length) {
+        loadJS("js/inputmask.min.js");
       }
 
       setTimeout(function() {
@@ -353,7 +362,7 @@
         }, 500);
         setTimeout(function() {
           $(".preloader.opened").removeClass("opened");
-          loadJS("js/form.js" + "?" + $.now());
+          loadJS("js/form.js");
         }, 500);
       }, 500);
 

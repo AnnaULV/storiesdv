@@ -8,13 +8,13 @@
   <!-- meta name="author" content="tarantul web development zone | www.tarantul.zone" / -->
   <meta name="description" content="Оставьте свои контактные данные и в ближайшее время я свяжусь с вами и отвечу на все интересующие вас вопросы">
   <!--link rel="canonical" href=""-->
-  <!--link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet"-->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
 
-  <link href="fonts/Roboto/Slab/Bold/style.css" rel="stylesheet">
-  <link href="fonts/Roboto/Classic/Regular/style.css" rel="stylesheet">
+  <!--link href="fonts/Roboto/Slab/Bold/style.css?1231" rel="stylesheet">
+  <link href="fonts/Roboto/Classic/Bold/style.css?1231" rel="stylesheet"-->
 
   <style>
     body,
@@ -27,6 +27,7 @@
       font-family: "Roboto", serif;
     }
 
+    strong,
     .accent_font {
       font-family: "Roboto Slab", serif;
     }
@@ -67,6 +68,7 @@
       z-index: 1000;
       align-items: center;
       justify-content: center;
+      padding: 24px;
       padding: clamp(24px, 7.5vw, 96px);
       background-color: #FFF;
     }
@@ -89,7 +91,7 @@
     .preloader>div:not(.logo):before,
     .preloader>div:not(.logo):after {
       border-radius: 50%;
-      border: .2rem solid transparent;
+      border: 2px solid transparent;
       border-top-color: #A9A454;
       animation-name: preloader;
     }
@@ -98,8 +100,8 @@
     .preloader>.logo svg {
       width: 100%;
       height: 100%;
-      max-width: 240px;
-      max-height: 240px;
+      max-width: 160px;
+      max-height: 160px;
     }
 
     .preloader>div:not(.logo) {
@@ -177,17 +179,18 @@
 
   </style>
 
-  <!--script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script-->
-  <script defer src="js/jquery.min.js"></script>
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <!--script defer src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script-->
+  <!--script defer src="js/jquery.min.js"></script-->
   <script defer src="js/template.js"></script>
+  <!--script defer src="js/swiper.min.js"></script-->
   <script>
     function loadJS(source) {
       "use strict";
       var s = document.getElementsByTagName("head")[0],
         sc = document.createElement("script");
       sc.defer = true;
-      sc.src = source;
+      sc.src = source + "?" + Date.now();
       s.appendChild(sc);
       return false;
     }
@@ -197,18 +200,17 @@
       let s = document.getElementsByTagName("head")[0];
       let sc = document.createElement("link");
       sc.rel = "stylesheet";
-      sc.href = source;
+      sc.href = source + "?" + Date.now();
       s.appendChild(sc);
       return false;
     }
 
-    let jsonCSS = JSON.parse('[{"source":"css/reset.css"},{"source":"css/style.css"},{"source":"css/form.css"},{"source":"css/vh.css"},{"source":"css/button.css"}]');
+    let jsonCSS = JSON.parse('[{"source":"css/reset.css"},{"source":"css/style.css"},{"source":"css/button.css"},{"source":"css/form.css"}]');
     jsonCSS.forEach(function(e, i) {
       setTimeout(function() {
-        loadCSS(jsonCSS[i].source + "?" + $.now());
+        loadCSS(jsonCSS[i].source);
       }, 250);
     });
-
   </script>
   <title>«ТАНТРА-БАНЯ» — оставьте заявку</title>
 </head>
@@ -222,7 +224,7 @@
       <article>
         <div class="center">
           <div class="form feedback">
-            <h1 class="accent_font heading" data-header="Оставьте заявку"></h1>
+            <h1 class="accent_font heading" data-header="Оставьте заявку">Оставьте заявку</h1>
           </div>
         </div>
         <div class="center">
@@ -239,7 +241,7 @@
                   <li>
                     <div class="required name">
                       <label class="required">
-                        <input class="field" type="text" name="QUEST[NAME]" value="" data-check="name" data-form="feedback" autocomplete="off">
+                        <input class="field content_font" type="text" name="QUEST[NAME]" value="" data-check="name" data-form="feedback" autocomplete="off">
                         <span>
                           <span class="small">Имя</span>
                         </span>
@@ -247,7 +249,7 @@
                     </div>
                     <div class="required phonemail">
                       <label class="required">
-                        <input class="field" type="text" name="QUEST[CONTACT]" value="" data-check="phonemail" data-form="feedback" autocomplete="off">
+                        <input class="field content_font" type="text" name="QUEST[CONTACT]" value="" data-check="phonemail" data-form="feedback" autocomplete="off">
                         <span>
                           <span class="small">Телефон или E-mail</span>
                         </span>
@@ -257,7 +259,7 @@
                   <li>
                     <div class="message">
                       <label>
-                        <textarea class="field" name="QUEST[MESSAGE]" data-form="feedback" autocomplete="off"></textarea>
+                        <textarea class="field content_font" name="QUEST[MESSAGE]" data-form="feedback" autocomplete="off"></textarea>
                         <span>
                           <span class="small">Текст сообщения</span>
                         </span>
@@ -286,10 +288,16 @@
   <script>
     window.onload = function() {
 
-      if ($("input[type=tel]").length) {
-        loadJS("js/inputmask.min.js" + "?" + $.now());
+      if (document.querySelectorAll("[data-header]").length) {
+        document.querySelectorAll("[data-header]").forEach((element) => {
+          element.innerText = element.dataset.header;
+        });
       }
-
+        
+      if (document.querySelectorAll("input[type='tel']").length) {
+        loadJS("js/inputmask.min.js");
+      }        
+        
       setTimeout(function() {
         $(".preloader.opened").animate({
           opacity: 0
@@ -299,12 +307,11 @@
         }, 500);
         setTimeout(function() {
           $(".preloader.opened").removeClass("opened");
-          loadJS("js/form.js" + "?" + $.now());
+          loadJS("js/form.js");
         }, 500);
       }, 500);
-
+      
     }
-
   </script>
 </body>
 
