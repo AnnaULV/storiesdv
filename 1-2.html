@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- meta name="author" content="tarantul web development zone | www.tarantul.zone" / -->
+  <meta name="description" content="Мы проходим в место с особой атмосферой и я приступаю к тому, в чем заключается мой талант — к погружению вас в мир телесности и чувственности">
+  <!--link rel="canonical" href=""-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+
+  <!--link href="fonts/Roboto/Slab/Bold/style.css?1231" rel="stylesheet">
+  <link href="fonts/Roboto/Classic/Bold/style.css?1231" rel="stylesheet"-->
+
+  <style>
+    body,
+    .preloader {
+      overflow: hidden;
+    }
+
+    body,
+    .content_font {
+      font-family: "Roboto", serif;
+    }
+
+    strong,
+    .accent_font {
+      font-family: "Roboto Slab", serif;
+    }
+
+    a,
+    .accent_color {
+      color: #fc0;
+    }
+
+    .accent_bg_color {
+      background-color: #fc0;
+    }
+
+    .accent_fill svg g,
+    .accent_fill svg path {
+      fill: #fc0 !important;
+    }
+
+    .content_color {
+      color: #fff;
+    }
+
+    .content_bg_color {
+      background-color: #000;
+    }
+
+    .content_fill svg g,
+    .content_fill svg path {
+      fill: #fff !important;
+    }
+
+    .preloader {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      padding: clamp(24px, 7.5vw, 96px);
+      background-color: #FFF;
+    }
+
+    .preloader.opened {
+      display: flex;
+      transform: translate(0, 0);
+    }
+
+    .preloader:not(.opened) {
+      display: none;
+      transform: translate(0, -100%);
+    }
+
+    .preloader>div {
+      position: relative;
+    }
+
+    .preloader>div:not(.logo),
+    .preloader>div:not(.logo):before,
+    .preloader>div:not(.logo):after {
+      border-radius: 50%;
+      border: 2px solid transparent;
+      border-top-color: #fc0;
+      animation-name: preloader;
+    }
+
+    .preloader>div,
+    .preloader>.logo svg {
+      width: 100%;
+      height: 100%;
+      max-width: 160px;
+      max-height: 160px;
+    }
+
+    .preloader>div:not(.logo) {
+      animation-duration: 2s;
+    }
+
+    .preloader>div:not(.logo):before,
+    .preloader>div:not(.logo):after {
+      content: "";
+      position: absolute;
+    }
+
+    .preloader>div:not(.logo):before {
+      top: 2px;
+      left: 2px;
+      right: 2px;
+      bottom: 2px;
+      animation-duration: 3s;
+      opacity: .5;
+    }
+
+    .preloader>div:not(.logo):after {
+      top: 6px;
+      left: 6px;
+      right: 6px;
+      bottom: 6px;
+      animation-duration: 1.5s;
+      opacity: .75;
+    }
+
+    @keyframes preloader {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .preloader.opened+.wrapper {
+      opacity: 0;
+    }
+
+    .preloader.opened {
+      opacity: 1;
+    }
+
+    @keyframes pulse {
+      from {
+        transform: scale3d(1, 1, 1);
+      }
+
+      50% {
+        transform: scale3d(1.05, 1.05, 1.05);
+      }
+
+      to {
+        transform: scale3d(1, 1, 1);
+      }
+    }
+
+    .preloader>div,
+    .preloader>div:before,
+    .preloader>div:after {
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-fill-mode: both;
+    }
+
+    .preloader>.logo {
+      animation-name: pulse;
+      animation-duration: 1.5s;
+    }
+
+  </style>
+
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <!--script defer src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script-->
+  <!--script defer src="js/jquery.min.js"></script-->
+  <script defer src="js/template.js"></script>
+  <!--script defer src="js/swiper.min.js"></script-->
+  <script>
+    function loadJS(source) {
+      "use strict";
+      var s = document.getElementsByTagName("head")[0],
+        sc = document.createElement("script");
+      sc.defer = true;
+      sc.src = source + "?" + Date.now();
+      s.appendChild(sc);
+      return false;
+    }
+
+    function loadCSS(source) {
+      "use strict";
+      let s = document.getElementsByTagName("head")[0];
+      let sc = document.createElement("link");
+      sc.rel = "stylesheet";
+      sc.href = source + "?" + Date.now();
+      s.appendChild(sc);
+      return false;
+    }
+
+    let jsonCSS = JSON.parse('[{"source":"css/reset.css"},{"source":"css/style.css"},{"source":"css/button.css"},{"source":"css/form.css"}]');
+    jsonCSS.forEach(function(e, i) {
+      setTimeout(function() {
+        loadCSS(jsonCSS[i].source);
+      }, 250);
+    });
+
+  </script>
+  <title>«ФАВОРИТ-ПРОЕКТ»</title>
+</head>
+
+<body class="circle">
+  <div class="preloader opened">
+    <div></div>
+  </div>
+  <div class="wrapper">
+    <div class="workspace">
+      <article>
+        <div class="image" style="background-image:url(img/5.1.jpg)"></div>
+        <div class="section">
+          <div class="center">
+
+            <div class="content content_font">
+              <p>Мы предлагаем Заказчику лучшие проектные решения для строительства, сформированные на основе эффективного и оптимального технологического процесса — от сбора исходных данных по проекту до получения положительного заключения Главгосэкспертизы и ввода объекта в эксплуатацию.</p>
+            </div>
+
+          </div>
+        </div>
+        <div class="section">
+          <div class="center">
+            <div class="form feedback">
+              <span class="accent_font heading" data-header="Оставьте заявку"></span>
+            </div>
+          </div>
+          <div class="center">
+            <div class="form feedback">
+              <div class="content_font">
+                <p>
+                  <span>Оставьте свои контактные данные и в ближайшее время я свяжусь с вами и отвечу на все интересующие вас вопросы.</span>
+                </p>
+                <p>
+                  <span>Ваша заявка успешно отправлена, в ближайшее время я свяжусь с вами и отвечу на все интересующие вас вопросы.</span>
+                </p>
+                <form name="feedback" method="post" action="#" autocomplete="off">
+                  <ul>
+                    <li>
+                      <div class="required name">
+                        <label class="required">
+                          <input class="field" type="text" name="QUEST[NAME]" value="" data-check="name" data-form="feedback" autocomplete="off">
+                          <span>
+                            <span class="small">Имя</span>
+                          </span>
+                        </label>
+                      </div>
+                      <div class="required phonemail">
+                        <label class="required">
+                          <input class="field" type="text" name="QUEST[CONTACT]" value="" data-check="phonemail" data-form="feedback" autocomplete="off">
+                          <span>
+                            <span class="small">Телефон или E-mail</span>
+                          </span>
+                        </label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="message">
+                        <label>
+                          <textarea class="field" name="QUEST[MESSAGE]" data-form="feedback" autocomplete="off"></textarea>
+                          <span>
+                            <span class="small">Текст сообщения</span>
+                          </span>
+                        </label>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <button type="button" aria-label="Отправить" class="button action hover text feedback accent_bg_color">
+                        <span></span>
+                        <span class="content_color content_font">Отправить</span>
+                      </button>
+                    </li>
+                    <li>
+                      <p class="small">Нажимая кнопку «Отправить» вы даете согласие на обработку персональных данных в соответсвии с <a href="policy.html" title="политика конфиденциальности" target="_blank">политикой конфиденциальности</a></p>
+                    </li>
+                  </ul>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+  <script>
+    window.onload = function() {
+
+      if (document.querySelectorAll(".swiper-container > .swiper > .swiper-wrapper > .swiper-slide").length) {
+        loadCSS("css/swiper.css");
+        loadCSS("css/gallery.swiper.css");
+        loadJS("js/swiper.min.js");
+        let timerID = setInterval(function() {
+          if (typeof Swiper !== "undefined") {
+            loadJS("js/gallery.swiper.js");
+            clearInterval(timerID);
+          }
+        }, 250);
+      }
+
+      if (document.querySelectorAll(".lazy").length) {
+        loadJS("js/lazyload.min.js");
+        let timerLazy = setInterval(function() {
+          if (typeof LazyLoad !== "undefined") {
+            var myLazyLoad = new LazyLoad({
+              container: document.querySelector("article")
+            });
+            clearInterval(timerLazy);
+          }
+        }, 250);
+      }
+
+      if (document.querySelectorAll("[data-header]").length) {
+        document.querySelectorAll("[data-header]").forEach((element) => {
+          element.innerText = element.dataset.header;
+        });
+      }
+
+      if (document.querySelectorAll("input[type='tel']").length) {
+        loadJS("js/inputmask.min.js");
+      }
+
+      setTimeout(function() {
+        $(".preloader.opened").animate({
+          opacity: 0
+        }, 500);
+        $(".wrapper").animate({
+          opacity: 1
+        }, 500);
+        setTimeout(function() {
+          $(".preloader.opened").removeClass("opened");
+          loadJS("js/form.js");
+        }, 500);
+      }, 500);
+
+    }
+
+  </script>
+</body>
+
+</html>
