@@ -59,7 +59,7 @@
   margin-right: 2rem;
   margin-right: clamp(2rem, 2.5vw, 3rem);
   white-space: nowrap;
-  color: #fff;
+  color: #000;
 }
 
 .button.icon > span:first-child {
